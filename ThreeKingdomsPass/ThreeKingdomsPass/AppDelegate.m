@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "TKGloble.h"
+#import "TKHomePageViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //setup
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat width = MAX(screenRect.size.width, screenRect.size.height);
+    CGFloat height = MIN(screenRect.size.width, screenRect.size.height);
+    TK_SCREEN_WIDTH = width;
+    TK_SCREEN_HEIGHT = height;
+    
+    //root
+    _root = [[UINavigationController alloc] initWithRootViewController:[TKHomePageViewController new]];
+    [self.window setRootViewController:_root];
+    
+    //_root.navigationBarHidden = YES;
+    
     return YES;
 }
 
