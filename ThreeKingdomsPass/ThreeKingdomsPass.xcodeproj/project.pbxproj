@@ -14,6 +14,7 @@
 		1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1B81B9189EB000A2615 /* Images.xcassets */; };
 		1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1BA1B9189EB000A2615 /* LaunchScreen.xib */; };
 		1C15D1C81B9189EB000A2615 /* ThreeKingdomsPassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */; };
+		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
 		1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */; };
 		1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C61B93FF5600FBA3F3 /* TKGameViewController.m */; };
 		1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C81B93FF5600FBA3F3 /* TKHomePageViewController.m */; };
@@ -40,6 +41,8 @@
 		1CF538171B93FF5600FBA3F3 /* HiraMinProN-W6.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CF537F91B93FF5600FBA3F3 /* HiraMinProN-W6.ttf */; };
 		1CF538181B93FF5600FBA3F3 /* SourceHanSansCN-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CF537FA1B93FF5600FBA3F3 /* SourceHanSansCN-Medium.otf */; };
 		1CF538191B93FF5600FBA3F3 /* TKGloble.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537FF1B93FF5600FBA3F3 /* TKGloble.m */; };
+		1CF555641B9597F800FBA3F3 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF555611B9597F800FBA3F3 /* FBShimmeringLayer.m */; };
+		1CF555651B9597F800FBA3F3 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF555631B9597F800FBA3F3 /* FBShimmeringView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		1C15D1C11B9189EB000A2615 /* ThreeKingdomsPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeKingdomsPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1C61B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeKingdomsPassTests.m; sourceTree = "<group>"; };
+		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1CF537C51B93FF5600FBA3F3 /* TKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameViewController.h; sourceTree = "<group>"; };
@@ -120,6 +124,12 @@
 		1CF537FD1B93FF5600FBA3F3 /* TKDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDefine.h; sourceTree = "<group>"; };
 		1CF537FE1B93FF5600FBA3F3 /* TKGloble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGloble.h; sourceTree = "<group>"; };
 		1CF537FF1B93FF5600FBA3F3 /* TKGloble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGloble.m; sourceTree = "<group>"; };
+		1CF5555E1B9597F800FBA3F3 /* FBShimmering-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBShimmering-Prefix.pch"; sourceTree = "<group>"; };
+		1CF5555F1B9597F800FBA3F3 /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		1CF555601B9597F800FBA3F3 /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		1CF555611B9597F800FBA3F3 /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		1CF555621B9597F800FBA3F3 /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		1CF555631B9597F800FBA3F3 /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,7 @@
 		1C15D1AA1B9189EB000A2615 /* ThreeKingdomsPass */ = {
 			isa = PBXGroup;
 			children = (
+				1CE686261B95B28000C73E81 /* Images */,
 				1CF537BF1B93FF5600FBA3F3 /* Classes */,
 				1C15D1AF1B9189EB000A2615 /* AppDelegate.h */,
 				1C15D1B01B9189EB000A2615 /* AppDelegate.m */,
@@ -198,6 +209,14 @@
 				1C15D1C61B9189EB000A2615 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CE686261B95B28000C73E81 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1CE686271B95B28000C73E81 /* background.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		1CF537BF1B93FF5600FBA3F3 /* Classes */ = {
@@ -242,6 +261,7 @@
 		1CF537C91B93FF5600FBA3F3 /* ClassKit */ = {
 			isa = PBXGroup;
 			children = (
+				1CF5555D1B9597F800FBA3F3 /* FBShimmering */,
 				1CF537CA1B93FF5600FBA3F3 /* BlocksKit */,
 				1CF537F81B93FF5600FBA3F3 /* Fonts */,
 			);
@@ -341,6 +361,19 @@
 			path = Globle;
 			sourceTree = "<group>";
 		};
+		1CF5555D1B9597F800FBA3F3 /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				1CF5555E1B9597F800FBA3F3 /* FBShimmering-Prefix.pch */,
+				1CF5555F1B9597F800FBA3F3 /* FBShimmering.h */,
+				1CF555601B9597F800FBA3F3 /* FBShimmeringLayer.h */,
+				1CF555611B9597F800FBA3F3 /* FBShimmeringLayer.m */,
+				1CF555621B9597F800FBA3F3 /* FBShimmeringView.h */,
+				1CF555631B9597F800FBA3F3 /* FBShimmeringView.m */,
+			);
+			path = FBShimmering;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,6 +457,7 @@
 				1C15D1B71B9189EB000A2615 /* Main.storyboard in Resources */,
 				1CF538181B93FF5600FBA3F3 /* SourceHanSansCN-Medium.otf in Resources */,
 				1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */,
+				1CE686281B95B28000C73E81 /* background.jpg in Resources */,
 				1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */,
 				1CF538171B93FF5600FBA3F3 /* HiraMinProN-W6.ttf in Resources */,
 			);
@@ -458,9 +492,11 @@
 				1CF538131B93FF5600FBA3F3 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				1CF538041B93FF5600FBA3F3 /* NSDictionary+BlocksKit.m in Sources */,
 				1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */,
+				1CF555651B9597F800FBA3F3 /* FBShimmeringView.m in Sources */,
 				1CF538121B93FF5600FBA3F3 /* NSTimer+BlocksKit.m in Sources */,
 				1CF538101B93FF5600FBA3F3 /* NSOrderedSet+BlocksKit.m in Sources */,
 				1C15D1B11B9189EB000A2615 /* AppDelegate.m in Sources */,
+				1CF555641B9597F800FBA3F3 /* FBShimmeringLayer.m in Sources */,
 				1CF538191B93FF5600FBA3F3 /* TKGloble.m in Sources */,
 				1CF5380E1B93FF5600FBA3F3 /* NSObject+BKBlockExecution.m in Sources */,
 				1CF538051B93FF5600FBA3F3 /* NSIndexSet+BlocksKit.m in Sources */,

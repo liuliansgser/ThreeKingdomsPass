@@ -31,7 +31,7 @@
     _root = [[UINavigationController alloc] initWithRootViewController:[TKHomePageViewController new]];
     [self.window setRootViewController:_root];
     
-    //_root.navigationBarHidden = YES;
+    _root.navigationBarHidden = YES;
     
     return YES;
 }
