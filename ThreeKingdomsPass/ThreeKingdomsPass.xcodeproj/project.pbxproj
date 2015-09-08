@@ -14,6 +14,9 @@
 		1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1B81B9189EB000A2615 /* Images.xcassets */; };
 		1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1BA1B9189EB000A2615 /* LaunchScreen.xib */; };
 		1C15D1C81B9189EB000A2615 /* ThreeKingdomsPassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */; };
+		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
+		1C6F4AE91B9ED42E00BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AE81B9ED42E00BED00F /* TransitionAnimator.m */; };
+		1C6F4AEC1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEB1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.m */; };
 		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
 		1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */; };
 		1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C61B93FF5600FBA3F3 /* TKGameViewController.m */; };
@@ -69,6 +72,11 @@
 		1C15D1C11B9189EB000A2615 /* ThreeKingdomsPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeKingdomsPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1C61B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeKingdomsPassTests.m; sourceTree = "<group>"; };
+		1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background.jpg; sourceTree = "<group>"; };
+		1C6F4AE71B9ED42E00BED00F /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		1C6F4AE81B9ED42E00BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		1C6F4AEA1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
+		1C6F4AEB1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
 		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -211,9 +219,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1C6F4AE61B9ED40100BED00F /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				1C6F4AE71B9ED42E00BED00F /* TransitionAnimator.h */,
+				1C6F4AE81B9ED42E00BED00F /* TransitionAnimator.m */,
+				1C6F4AEA1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.h */,
+				1C6F4AEB1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		1CE686261B95B28000C73E81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */,
 				1CE686271B95B28000C73E81 /* background.jpg */,
 			);
 			path = Images;
@@ -233,6 +253,7 @@
 		1CF537C01B93FF5600FBA3F3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1C6F4AE61B9ED40100BED00F /* Transition */,
 				1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */,
 				1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */,
 			);
@@ -460,6 +481,7 @@
 				1CE686281B95B28000C73E81 /* background.jpg in Resources */,
 				1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */,
 				1CF538171B93FF5600FBA3F3 /* HiraMinProN-W6.ttf in Resources */,
+				1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +504,7 @@
 				1CF538111B93FF5600FBA3F3 /* NSSet+BlocksKit.m in Sources */,
 				1CF538091B93FF5600FBA3F3 /* NSMutableDictionary+BlocksKit.m in Sources */,
 				1C15D1B41B9189EB000A2615 /* ViewController.m in Sources */,
+				1C6F4AEC1B9ED4F600BED00F /* TransitionHorizontalLinesAnimator.m in Sources */,
 				1CF538151B93FF5600FBA3F3 /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */,
 				1CF5380D1B93FF5600FBA3F3 /* NSObject+BKAssociatedObjects.m in Sources */,
@@ -502,6 +525,7 @@
 				1CF538051B93FF5600FBA3F3 /* NSIndexSet+BlocksKit.m in Sources */,
 				1CF5380C1B93FF5600FBA3F3 /* NSMutableSet+BlocksKit.m in Sources */,
 				1CF538061B93FF5600FBA3F3 /* NSInvocation+BlocksKit.m in Sources */,
+				1C6F4AE91B9ED42E00BED00F /* TransitionAnimator.m in Sources */,
 				1CF5380F1B93FF5600FBA3F3 /* NSObject+BKBlockObservation.m in Sources */,
 				1C15D1AE1B9189EB000A2615 /* main.m in Sources */,
 				1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */,
