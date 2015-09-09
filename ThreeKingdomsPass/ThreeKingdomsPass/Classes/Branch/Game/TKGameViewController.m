@@ -12,6 +12,12 @@
 #import "TKGame.h"
 #import "TKGameUserHandCardsScrollView.h"
 
+@interface TKGameViewController ()
+
+@property (nonatomic, strong) TKGameUserHandCardsScrollView *handCardsView;
+
+@end
+
 @implementation TKGameViewController
 
 - (void)viewDidLoad {
@@ -32,15 +38,25 @@
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
     
+    UIButton *sortingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    sortingButton.frame = CGRectMake(0, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT-startButtonFontSize*2, startButtonFontSize*6, startButtonFontSize*2);
+    [sortingButton setTitle:@"智能排序" forState:UIControlStateNormal];
+    sortingButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
+    __weak TKGameViewController *me = self;
+    [sortingButton bk_addEventHandler:^(UIButton *sender) {
+        [me.handCardsView sorting];
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sortingButton];
+    
     [self _createUserHandsView];
 }
 
 - (void)_createUserHandsView
 {
-    TKGameUserHandCardsScrollView *handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0.f, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT)];
-    [self.view addSubview:handCardsView];
+    _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0.f, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT)];
+    [self.view addSubview:_handCardsView];
     
-    [handCardsView updateItemsWithCards:[TKGame sharedInstance].normalcards];
+    [_handCardsView updateItemsWithCards:[TKGame sharedInstance].normalcards];
 }
 
 - (void)didReceiveMemoryWarning {
