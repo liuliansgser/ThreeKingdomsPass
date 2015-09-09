@@ -63,6 +63,7 @@
 		1CEF64B91BA032450014C550 /* card_wugufengdeng_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648F1BA032450014C550 /* card_wugufengdeng_image.jpg */; };
 		1CEF64BA1BA032450014C550 /* card_wuxiekeji_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64901BA032450014C550 /* card_wuxiekeji_image.jpg */; };
 		1CEF64BB1BA032450014C550 /* card_wuzhongshengyou_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64911BA032450014C550 /* card_wuzhongshengyou_image.jpg */; };
+		1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64BC1BA038DF0014C550 /* Cards.xml */; };
 		1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */; };
 		1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C61B93FF5600FBA3F3 /* TKGameViewController.m */; };
 		1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C81B93FF5600FBA3F3 /* TKHomePageViewController.m */; };
@@ -170,6 +171,7 @@
 		1CEF648F1BA032450014C550 /* card_wugufengdeng_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wugufengdeng_image.jpg; sourceTree = "<group>"; };
 		1CEF64901BA032450014C550 /* card_wuxiekeji_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wuxiekeji_image.jpg; sourceTree = "<group>"; };
 		1CEF64911BA032450014C550 /* card_wuzhongshengyou_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wuzhongshengyou_image.jpg; sourceTree = "<group>"; };
+		1CEF64BC1BA038DF0014C550 /* Cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cards.xml; sourceTree = "<group>"; };
 		1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1CF537C51B93FF5600FBA3F3 /* TKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameViewController.h; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				1CF537FD1B93FF5600FBA3F3 /* TKDefine.h */,
 				1CF537FE1B93FF5600FBA3F3 /* TKGloble.h */,
 				1CF537FF1B93FF5600FBA3F3 /* TKGloble.m */,
+				1CEF64BC1BA038DF0014C550 /* Cards.xml */,
 			);
 			path = Globle;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				1CEF64941BA032450014C550 /* card_leisha_image.jpg in Resources */,
 				1CEF649F1BA032450014C550 /* card_guanshifu_image.jpg in Resources */,
 				1CEF64A71BA032450014C550 /* card_tengjia_image.jpg in Resources */,
+				1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */,
 				1CEF64921BA032450014C550 /* card_huosha_image.jpg in Resources */,
 				1CEF64991BA032450014C550 /* card_baiyinshizi_image.jpg in Resources */,
 				1CEF64931BA032450014C550 /* card_jiu_image.jpg in Resources */,
