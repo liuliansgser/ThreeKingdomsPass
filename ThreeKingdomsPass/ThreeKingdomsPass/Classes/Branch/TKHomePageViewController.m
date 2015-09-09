@@ -80,7 +80,7 @@
 {
     [super viewWillLayoutSubviews];
     CGFloat width = TK_SCREEN_WIDTH/4.f;
-    _shimmeringView.frame = CGRectMake((TK_SCREEN_WIDTH-width)/2, 0, width, TK_SCREEN_5S(45.f));
+    self.shimmeringView.frame = CGRectMake((TK_SCREEN_WIDTH-width)/2, 0, width, TK_SCREEN_5S(45.f));
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController

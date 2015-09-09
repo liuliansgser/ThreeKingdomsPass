@@ -9,6 +9,8 @@
 #import "TKGameViewController.h"
 #import "TKGloble.h"
 #import "UIControl+BlocksKit.h"
+#import "TKGame.h"
+#import "TKGameCardData.h"
 
 @implementation TKGameViewController
 
