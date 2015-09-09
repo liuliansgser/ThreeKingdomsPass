@@ -27,6 +27,10 @@ return __singletion;\
 //screen
 #define TK_SCREEN_WIDTH TK_SINGLETION(TKGloble).globleWidth
 #define TK_SCREEN_HEIGHT TK_SINGLETION(TKGloble).globleHeight
+#define TK_SCREEN_5S_6_6P(iPhone5S,iPhone6,iPhone6P) ((TK_SCREEN_WIDTH==667)?iPhone6:((TK_SCREEN_WIDTH==736)?iPhone6P:iPhone5S))
+#define TK_SCREEN_MODULUS 1.104f
+#define TK_SCREEN_5S_6(iPhone5S,iPhone6) TK_SCREEN_5S_6_6P(iPhone5S,iPhone6,((iPhone6)*TK_SCREEN_MODULUS))
+#define TK_SCREEN_5S(iPhone5S) TK_SCREEN_5S_6_6P(iPhone5S,iPhone5S,((iPhone5S)*TK_SCREEN_MODULUS))
 
 //delegate
 #define TK_DELEGATE [TK_SINGLETION(TKGloble) delegate]
@@ -43,6 +47,11 @@ blue: (float)((num)&0xff)     / 0xff        \
 alpha: 1.0]                                  \
 
 #define RGBHEX( num ) RGBINT( 0x##num )
+
+//card
+#define TK_CARD_SLOPE 5.f/7.f
+#define TK_CARD_USERHAND_HEIGHT TK_SCREEN_HEIGHT/5.f
+#define TK_CARD_USERHAND_WIDTH (TK_CARD_USERHAND_HEIGHT)*(TK_CARD_SLOPE)
 
 
 #endif

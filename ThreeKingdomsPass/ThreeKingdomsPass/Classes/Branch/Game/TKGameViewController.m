@@ -7,12 +7,40 @@
 //
 
 #import "TKGameViewController.h"
+#import "TKGloble.h"
+#import "UIControl+BlocksKit.h"
+#import "TKGame.h"
+#import "TKGameUserHandCardsScrollView.h"
 
 @implementation TKGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIImageView *backGroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backGroundImageView.image = [UIImage imageNamed:@"game_background.jpg"];
+    backGroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view addSubview:backGroundImageView];
+    
+    CGFloat startButtonFontSize = TK_SCREEN_5S(15.f);
+    UIButton *startButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    startButton.frame = CGRectMake(0, 0, startButtonFontSize*3, startButtonFontSize*2);
+    [startButton setTitle:@"投降" forState:UIControlStateNormal];
+    startButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
+    [startButton bk_addEventHandler:^(UIButton *sender) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:startButton];
+    
+    [self _createUserHandsView];
+}
+
+- (void)_createUserHandsView
+{
+    TKGameUserHandCardsScrollView *handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0.f, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT)];
+    [self.view addSubview:handCardsView];
+    
+    [handCardsView updateItemsWithCards:[TKGame sharedInstance].normalcards];
 }
 
 - (void)didReceiveMemoryWarning {

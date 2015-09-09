@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C11C2E61BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C11C2E51BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m */; };
+		1C11C2E91BA0655900A04BCD /* TKGameCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C11C2E81BA0655900A04BCD /* TKGameCardView.m */; };
 		1C15D1AE1B9189EB000A2615 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1AD1B9189EB000A2615 /* main.m */; };
 		1C15D1B11B9189EB000A2615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1B01B9189EB000A2615 /* AppDelegate.m */; };
 		1C15D1B41B9189EB000A2615 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1B31B9189EB000A2615 /* ViewController.m */; };
@@ -14,7 +16,46 @@
 		1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1B81B9189EB000A2615 /* Images.xcassets */; };
 		1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1BA1B9189EB000A2615 /* LaunchScreen.xib */; };
 		1C15D1C81B9189EB000A2615 /* ThreeKingdomsPassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */; };
+		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
+		1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */; };
+		1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */; };
 		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
+		1CEF645F1BA01EFB0014C550 /* card.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF645C1BA01EFB0014C550 /* card.pass */; };
+		1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */; };
+		1CEF64631BA0200A0014C550 /* TKGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF64621BA0200A0014C550 /* TKGame.m */; };
+		1CEF64951BA032450014C550 /* card_sha_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64691BA032450014C550 /* card_sha_image.jpg */; };
+		1CEF64961BA032450014C550 /* card_shan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF646A1BA032450014C550 /* card_shan_image.jpg */; };
+		1CEF64971BA032450014C550 /* card_tao_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF646B1BA032450014C550 /* card_tao_image.jpg */; };
+		1CEF64981BA032450014C550 /* card_baguazhen_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF646D1BA032450014C550 /* card_baguazhen_image.jpg */; };
+		1CEF649A1BA032450014C550 /* card_chitu_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF646F1BA032450014C550 /* card_chitu_image.jpg */; };
+		1CEF649B1BA032450014C550 /* card_cixiongshuanggujian_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64701BA032450014C550 /* card_cixiongshuanggujian_image.jpg */; };
+		1CEF649C1BA032450014C550 /* card_dawan_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64711BA032450014C550 /* card_dawan_image.jpg */; };
+		1CEF649D1BA032450014C550 /* card_dilu_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64721BA032450014C550 /* card_dilu_image.jpg */; };
+		1CEF649E1BA032450014C550 /* card_fangtianhuaji_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64731BA032450014C550 /* card_fangtianhuaji_image.jpg */; };
+		1CEF649F1BA032450014C550 /* card_guanshifu_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64741BA032450014C550 /* card_guanshifu_image.jpg */; };
+		1CEF64A11BA032450014C550 /* card_hanbingjian_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64761BA032450014C550 /* card_hanbingjian_image.jpg */; };
+		1CEF64A21BA032450014C550 /* card_jueying_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64771BA032450014C550 /* card_jueying_image.jpg */; };
+		1CEF64A31BA032450014C550 /* card_qilingong_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64781BA032450014C550 /* card_qilingong_image.jpg */; };
+		1CEF64A41BA032450014C550 /* card_qinggangjian_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64791BA032450014C550 /* card_qinggangjian_image.jpg */; };
+		1CEF64A51BA032450014C550 /* card_qinglongyanyuedao_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF647A1BA032450014C550 /* card_qinglongyanyuedao_image.jpg */; };
+		1CEF64A61BA032450014C550 /* card_renwangdun_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF647B1BA032450014C550 /* card_renwangdun_image.jpg */; };
+		1CEF64A81BA032450014C550 /* card_zhangbashemao_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF647D1BA032450014C550 /* card_zhangbashemao_image.jpg */; };
+		1CEF64A91BA032450014C550 /* card_zhuahuangfeidian_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF647E1BA032450014C550 /* card_zhuahuangfeidian_image.jpg */; };
+		1CEF64AA1BA032450014C550 /* card_zhugeliannu_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF647F1BA032450014C550 /* card_zhugeliannu_image.jpg */; };
+		1CEF64AC1BA032450014C550 /* card_zixin_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64811BA032450014C550 /* card_zixin_image.jpg */; };
+		1CEF64AE1BA032450014C550 /* card_guohechaiqiao_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64841BA032450014C550 /* card_guohechaiqiao_image.jpg */; };
+		1CEF64B01BA032450014C550 /* card_jiedaosharen_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64861BA032450014C550 /* card_jiedaosharen_image.jpg */; };
+		1CEF64B11BA032450014C550 /* card_juedou_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64871BA032450014C550 /* card_juedou_image.jpg */; };
+		1CEF64B21BA032450014C550 /* card_lebusishu_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64881BA032450014C550 /* card_lebusishu_image.jpg */; };
+		1CEF64B31BA032450014C550 /* card_nanmanruqin_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64891BA032450014C550 /* card_nanmanruqin_image.jpg */; };
+		1CEF64B41BA032450014C550 /* card_shandian_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648A1BA032450014C550 /* card_shandian_image.jpg */; };
+		1CEF64B51BA032450014C550 /* card_shunshouqianyang_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648B1BA032450014C550 /* card_shunshouqianyang_image.jpg */; };
+		1CEF64B61BA032450014C550 /* card_taoyuanjieyi_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648C1BA032450014C550 /* card_taoyuanjieyi_image.jpg */; };
+		1CEF64B81BA032450014C550 /* card_wanjianqifa_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648E1BA032450014C550 /* card_wanjianqifa_image.jpg */; };
+		1CEF64B91BA032450014C550 /* card_wugufengdeng_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF648F1BA032450014C550 /* card_wugufengdeng_image.jpg */; };
+		1CEF64BA1BA032450014C550 /* card_wuxiekeji_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64901BA032450014C550 /* card_wuxiekeji_image.jpg */; };
+		1CEF64BB1BA032450014C550 /* card_wuzhongshengyou_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64911BA032450014C550 /* card_wuzhongshengyou_image.jpg */; };
+		1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF64BC1BA038DF0014C550 /* Cards.xml */; };
 		1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */; };
 		1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C61B93FF5600FBA3F3 /* TKGameViewController.m */; };
 		1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF537C81B93FF5600FBA3F3 /* TKHomePageViewController.m */; };
@@ -56,6 +97,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C11C2E41BA0653C00A04BCD /* TKGameUserHandCardsScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameUserHandCardsScrollView.h; sourceTree = "<group>"; };
+		1C11C2E51BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameUserHandCardsScrollView.m; sourceTree = "<group>"; };
+		1C11C2E71BA0655900A04BCD /* TKGameCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameCardView.h; sourceTree = "<group>"; };
+		1C11C2E81BA0655900A04BCD /* TKGameCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameCardView.m; sourceTree = "<group>"; };
 		1C15D1A81B9189EB000A2615 /* ThreeKingdomsPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeKingdomsPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1AC1B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1AD1B9189EB000A2615 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,7 +114,50 @@
 		1C15D1C11B9189EB000A2615 /* ThreeKingdomsPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeKingdomsPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1C61B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeKingdomsPassTests.m; sourceTree = "<group>"; };
+		1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background.jpg; sourceTree = "<group>"; };
+		1C6F4AEE1B9FF59300BED00F /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		1C6F4AF01B9FF59300BED00F /* TransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
+		1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
 		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		1CEF645C1BA01EFB0014C550 /* card.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = card.pass; sourceTree = "<group>"; };
+		1CEF645D1BA01EFB0014C550 /* TKGameCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameCardData.h; sourceTree = "<group>"; };
+		1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameCardData.m; sourceTree = "<group>"; };
+		1CEF64611BA0200A0014C550 /* TKGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGame.h; sourceTree = "<group>"; };
+		1CEF64621BA0200A0014C550 /* TKGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGame.m; sourceTree = "<group>"; };
+		1CEF64691BA032450014C550 /* card_sha_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_sha_image.jpg; sourceTree = "<group>"; };
+		1CEF646A1BA032450014C550 /* card_shan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_shan_image.jpg; sourceTree = "<group>"; };
+		1CEF646B1BA032450014C550 /* card_tao_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_tao_image.jpg; sourceTree = "<group>"; };
+		1CEF646D1BA032450014C550 /* card_baguazhen_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_baguazhen_image.jpg; sourceTree = "<group>"; };
+		1CEF646F1BA032450014C550 /* card_chitu_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_chitu_image.jpg; sourceTree = "<group>"; };
+		1CEF64701BA032450014C550 /* card_cixiongshuanggujian_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_cixiongshuanggujian_image.jpg; sourceTree = "<group>"; };
+		1CEF64711BA032450014C550 /* card_dawan_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_dawan_image.jpg; sourceTree = "<group>"; };
+		1CEF64721BA032450014C550 /* card_dilu_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_dilu_image.jpg; sourceTree = "<group>"; };
+		1CEF64731BA032450014C550 /* card_fangtianhuaji_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_fangtianhuaji_image.jpg; sourceTree = "<group>"; };
+		1CEF64741BA032450014C550 /* card_guanshifu_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_guanshifu_image.jpg; sourceTree = "<group>"; };
+		1CEF64761BA032450014C550 /* card_hanbingjian_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_hanbingjian_image.jpg; sourceTree = "<group>"; };
+		1CEF64771BA032450014C550 /* card_jueying_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_jueying_image.jpg; sourceTree = "<group>"; };
+		1CEF64781BA032450014C550 /* card_qilingong_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_qilingong_image.jpg; sourceTree = "<group>"; };
+		1CEF64791BA032450014C550 /* card_qinggangjian_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_qinggangjian_image.jpg; sourceTree = "<group>"; };
+		1CEF647A1BA032450014C550 /* card_qinglongyanyuedao_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_qinglongyanyuedao_image.jpg; sourceTree = "<group>"; };
+		1CEF647B1BA032450014C550 /* card_renwangdun_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_renwangdun_image.jpg; sourceTree = "<group>"; };
+		1CEF647D1BA032450014C550 /* card_zhangbashemao_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_zhangbashemao_image.jpg; sourceTree = "<group>"; };
+		1CEF647E1BA032450014C550 /* card_zhuahuangfeidian_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_zhuahuangfeidian_image.jpg; sourceTree = "<group>"; };
+		1CEF647F1BA032450014C550 /* card_zhugeliannu_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_zhugeliannu_image.jpg; sourceTree = "<group>"; };
+		1CEF64811BA032450014C550 /* card_zixin_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_zixin_image.jpg; sourceTree = "<group>"; };
+		1CEF64841BA032450014C550 /* card_guohechaiqiao_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_guohechaiqiao_image.jpg; sourceTree = "<group>"; };
+		1CEF64861BA032450014C550 /* card_jiedaosharen_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_jiedaosharen_image.jpg; sourceTree = "<group>"; };
+		1CEF64871BA032450014C550 /* card_juedou_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_juedou_image.jpg; sourceTree = "<group>"; };
+		1CEF64881BA032450014C550 /* card_lebusishu_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_lebusishu_image.jpg; sourceTree = "<group>"; };
+		1CEF64891BA032450014C550 /* card_nanmanruqin_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_nanmanruqin_image.jpg; sourceTree = "<group>"; };
+		1CEF648A1BA032450014C550 /* card_shandian_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_shandian_image.jpg; sourceTree = "<group>"; };
+		1CEF648B1BA032450014C550 /* card_shunshouqianyang_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_shunshouqianyang_image.jpg; sourceTree = "<group>"; };
+		1CEF648C1BA032450014C550 /* card_taoyuanjieyi_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_taoyuanjieyi_image.jpg; sourceTree = "<group>"; };
+		1CEF648E1BA032450014C550 /* card_wanjianqifa_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wanjianqifa_image.jpg; sourceTree = "<group>"; };
+		1CEF648F1BA032450014C550 /* card_wugufengdeng_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wugufengdeng_image.jpg; sourceTree = "<group>"; };
+		1CEF64901BA032450014C550 /* card_wuxiekeji_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wuxiekeji_image.jpg; sourceTree = "<group>"; };
+		1CEF64911BA032450014C550 /* card_wuzhongshengyou_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_wuzhongshengyou_image.jpg; sourceTree = "<group>"; };
+		1CEF64BC1BA038DF0014C550 /* Cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cards.xml; sourceTree = "<group>"; };
 		1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1CF537C51B93FF5600FBA3F3 /* TKGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameViewController.h; sourceTree = "<group>"; };
@@ -150,6 +238,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C11C2E31BA0653C00A04BCD /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				1C11C2E41BA0653C00A04BCD /* TKGameUserHandCardsScrollView.h */,
+				1C11C2E51BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m */,
+				1C11C2E71BA0655900A04BCD /* TKGameCardView.h */,
+				1C11C2E81BA0655900A04BCD /* TKGameCardView.m */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		1C15D19F1B9189EB000A2615 = {
 			isa = PBXGroup;
 			children = (
@@ -211,12 +310,108 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1C6F4AED1B9FF59300BED00F /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				1C6F4AEE1B9FF59300BED00F /* TransitionAnimator.h */,
+				1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */,
+				1C6F4AF01B9FF59300BED00F /* TransitionHorizontalLinesAnimator.h */,
+				1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		1CE686261B95B28000C73E81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1CEF64641BA032450014C550 /* CardImages */,
+				1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */,
 				1CE686271B95B28000C73E81 /* background.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		1CEF645A1BA01EFB0014C550 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF645B1BA01EFB0014C550 /* Card */,
+				1CEF64611BA0200A0014C550 /* TKGame.h */,
+				1CEF64621BA0200A0014C550 /* TKGame.m */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		1CEF645B1BA01EFB0014C550 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF645C1BA01EFB0014C550 /* card.pass */,
+				1CEF645D1BA01EFB0014C550 /* TKGameCardData.h */,
+				1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		1CEF64641BA032450014C550 /* CardImages */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF64651BA032450014C550 /* Basic */,
+				1CEF646C1BA032450014C550 /* Equipment */,
+				1CEF64821BA032450014C550 /* Kits */,
+			);
+			path = CardImages;
+			sourceTree = "<group>";
+		};
+		1CEF64651BA032450014C550 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF64691BA032450014C550 /* card_sha_image.jpg */,
+				1CEF646A1BA032450014C550 /* card_shan_image.jpg */,
+				1CEF646B1BA032450014C550 /* card_tao_image.jpg */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		1CEF646C1BA032450014C550 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF646D1BA032450014C550 /* card_baguazhen_image.jpg */,
+				1CEF646F1BA032450014C550 /* card_chitu_image.jpg */,
+				1CEF64701BA032450014C550 /* card_cixiongshuanggujian_image.jpg */,
+				1CEF64711BA032450014C550 /* card_dawan_image.jpg */,
+				1CEF64721BA032450014C550 /* card_dilu_image.jpg */,
+				1CEF64731BA032450014C550 /* card_fangtianhuaji_image.jpg */,
+				1CEF64741BA032450014C550 /* card_guanshifu_image.jpg */,
+				1CEF64761BA032450014C550 /* card_hanbingjian_image.jpg */,
+				1CEF64771BA032450014C550 /* card_jueying_image.jpg */,
+				1CEF64781BA032450014C550 /* card_qilingong_image.jpg */,
+				1CEF64791BA032450014C550 /* card_qinggangjian_image.jpg */,
+				1CEF647A1BA032450014C550 /* card_qinglongyanyuedao_image.jpg */,
+				1CEF647B1BA032450014C550 /* card_renwangdun_image.jpg */,
+				1CEF647D1BA032450014C550 /* card_zhangbashemao_image.jpg */,
+				1CEF647E1BA032450014C550 /* card_zhuahuangfeidian_image.jpg */,
+				1CEF647F1BA032450014C550 /* card_zhugeliannu_image.jpg */,
+				1CEF64811BA032450014C550 /* card_zixin_image.jpg */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		1CEF64821BA032450014C550 /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				1CEF64841BA032450014C550 /* card_guohechaiqiao_image.jpg */,
+				1CEF64861BA032450014C550 /* card_jiedaosharen_image.jpg */,
+				1CEF64871BA032450014C550 /* card_juedou_image.jpg */,
+				1CEF64881BA032450014C550 /* card_lebusishu_image.jpg */,
+				1CEF64891BA032450014C550 /* card_nanmanruqin_image.jpg */,
+				1CEF648A1BA032450014C550 /* card_shandian_image.jpg */,
+				1CEF648B1BA032450014C550 /* card_shunshouqianyang_image.jpg */,
+				1CEF648C1BA032450014C550 /* card_taoyuanjieyi_image.jpg */,
+				1CEF648E1BA032450014C550 /* card_wanjianqifa_image.jpg */,
+				1CEF648F1BA032450014C550 /* card_wugufengdeng_image.jpg */,
+				1CEF64901BA032450014C550 /* card_wuxiekeji_image.jpg */,
+				1CEF64911BA032450014C550 /* card_wuzhongshengyou_image.jpg */,
+			);
+			path = Kits;
 			sourceTree = "<group>";
 		};
 		1CF537BF1B93FF5600FBA3F3 /* Classes */ = {
@@ -233,6 +428,7 @@
 		1CF537C01B93FF5600FBA3F3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1C6F4AED1B9FF59300BED00F /* Transition */,
 				1CF537C11B93FF5600FBA3F3 /* BaseViewController.h */,
 				1CF537C21B93FF5600FBA3F3 /* BaseViewController.m */,
 			);
@@ -252,6 +448,7 @@
 		1CF537C41B93FF5600FBA3F3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				1C11C2E31BA0653C00A04BCD /* Card */,
 				1CF537C51B93FF5600FBA3F3 /* TKGameViewController.h */,
 				1CF537C61B93FF5600FBA3F3 /* TKGameViewController.m */,
 			);
@@ -346,6 +543,7 @@
 		1CF537FB1B93FF5600FBA3F3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1CEF645A1BA01EFB0014C550 /* Game */,
 				1CF537FC1B93FF5600FBA3F3 /* Globle */,
 			);
 			path = Data;
@@ -357,6 +555,7 @@
 				1CF537FD1B93FF5600FBA3F3 /* TKDefine.h */,
 				1CF537FE1B93FF5600FBA3F3 /* TKGloble.h */,
 				1CF537FF1B93FF5600FBA3F3 /* TKGloble.m */,
+				1CEF64BC1BA038DF0014C550 /* Cards.xml */,
 			);
 			path = Globle;
 			sourceTree = "<group>";
@@ -454,12 +653,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CEF64A81BA032450014C550 /* card_zhangbashemao_image.jpg in Resources */,
+				1CEF64951BA032450014C550 /* card_sha_image.jpg in Resources */,
+				1CEF649A1BA032450014C550 /* card_chitu_image.jpg in Resources */,
+				1CEF645F1BA01EFB0014C550 /* card.pass in Resources */,
+				1CEF64A91BA032450014C550 /* card_zhuahuangfeidian_image.jpg in Resources */,
+				1CEF649B1BA032450014C550 /* card_cixiongshuanggujian_image.jpg in Resources */,
+				1CEF64961BA032450014C550 /* card_shan_image.jpg in Resources */,
+				1CEF64AE1BA032450014C550 /* card_guohechaiqiao_image.jpg in Resources */,
+				1CEF64B21BA032450014C550 /* card_lebusishu_image.jpg in Resources */,
+				1CEF64A21BA032450014C550 /* card_jueying_image.jpg in Resources */,
+				1CEF64A11BA032450014C550 /* card_hanbingjian_image.jpg in Resources */,
+				1CEF64A61BA032450014C550 /* card_renwangdun_image.jpg in Resources */,
 				1C15D1B71B9189EB000A2615 /* Main.storyboard in Resources */,
+				1CEF64B61BA032450014C550 /* card_taoyuanjieyi_image.jpg in Resources */,
 				1CF538181B93FF5600FBA3F3 /* SourceHanSansCN-Medium.otf in Resources */,
+				1CEF64B51BA032450014C550 /* card_shunshouqianyang_image.jpg in Resources */,
+				1CEF649F1BA032450014C550 /* card_guanshifu_image.jpg in Resources */,
+				1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */,
+				1CEF64B11BA032450014C550 /* card_juedou_image.jpg in Resources */,
 				1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */,
+				1CEF649C1BA032450014C550 /* card_dawan_image.jpg in Resources */,
+				1CEF64BB1BA032450014C550 /* card_wuzhongshengyou_image.jpg in Resources */,
+				1CEF64BA1BA032450014C550 /* card_wuxiekeji_image.jpg in Resources */,
 				1CE686281B95B28000C73E81 /* background.jpg in Resources */,
+				1CEF64B91BA032450014C550 /* card_wugufengdeng_image.jpg in Resources */,
 				1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */,
+				1CEF64A31BA032450014C550 /* card_qilingong_image.jpg in Resources */,
+				1CEF649D1BA032450014C550 /* card_dilu_image.jpg in Resources */,
+				1CEF64B41BA032450014C550 /* card_shandian_image.jpg in Resources */,
+				1CEF64A51BA032450014C550 /* card_qinglongyanyuedao_image.jpg in Resources */,
+				1CEF64AA1BA032450014C550 /* card_zhugeliannu_image.jpg in Resources */,
 				1CF538171B93FF5600FBA3F3 /* HiraMinProN-W6.ttf in Resources */,
+				1CEF64971BA032450014C550 /* card_tao_image.jpg in Resources */,
+				1CEF64A41BA032450014C550 /* card_qinggangjian_image.jpg in Resources */,
+				1CEF649E1BA032450014C550 /* card_fangtianhuaji_image.jpg in Resources */,
+				1CEF64B31BA032450014C550 /* card_nanmanruqin_image.jpg in Resources */,
+				1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */,
+				1CEF64B81BA032450014C550 /* card_wanjianqifa_image.jpg in Resources */,
+				1CEF64981BA032450014C550 /* card_baguazhen_image.jpg in Resources */,
+				1CEF64B01BA032450014C550 /* card_jiedaosharen_image.jpg in Resources */,
+				1CEF64AC1BA032450014C550 /* card_zixin_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,11 +711,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C11C2E61BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m in Sources */,
 				1CF538141B93FF5600FBA3F3 /* UIControl+BlocksKit.m in Sources */,
 				1CF538071B93FF5600FBA3F3 /* NSMapTable+BlocksKit.m in Sources */,
 				1CF538111B93FF5600FBA3F3 /* NSSet+BlocksKit.m in Sources */,
 				1CF538091B93FF5600FBA3F3 /* NSMutableDictionary+BlocksKit.m in Sources */,
 				1C15D1B41B9189EB000A2615 /* ViewController.m in Sources */,
+				1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */,
 				1CF538151B93FF5600FBA3F3 /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */,
 				1CF5380D1B93FF5600FBA3F3 /* NSObject+BKAssociatedObjects.m in Sources */,
@@ -489,6 +725,7 @@
 				1CF538161B93FF5600FBA3F3 /* UIView+BlocksKit.m in Sources */,
 				1CF538081B93FF5600FBA3F3 /* NSMutableArray+BlocksKit.m in Sources */,
 				1CF5380A1B93FF5600FBA3F3 /* NSMutableIndexSet+BlocksKit.m in Sources */,
+				1C11C2E91BA0655900A04BCD /* TKGameCardView.m in Sources */,
 				1CF538131B93FF5600FBA3F3 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				1CF538041B93FF5600FBA3F3 /* NSDictionary+BlocksKit.m in Sources */,
 				1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */,
@@ -500,8 +737,11 @@
 				1CF538191B93FF5600FBA3F3 /* TKGloble.m in Sources */,
 				1CF5380E1B93FF5600FBA3F3 /* NSObject+BKBlockExecution.m in Sources */,
 				1CF538051B93FF5600FBA3F3 /* NSIndexSet+BlocksKit.m in Sources */,
+				1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */,
 				1CF5380C1B93FF5600FBA3F3 /* NSMutableSet+BlocksKit.m in Sources */,
 				1CF538061B93FF5600FBA3F3 /* NSInvocation+BlocksKit.m in Sources */,
+				1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */,
+				1CEF64631BA0200A0014C550 /* TKGame.m in Sources */,
 				1CF5380F1B93FF5600FBA3F3 /* NSObject+BKBlockObservation.m in Sources */,
 				1C15D1AE1B9189EB000A2615 /* main.m in Sources */,
 				1CF538011B93FF5600FBA3F3 /* TKGameViewController.m in Sources */,
