@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F20C3C75-E1DE-439F-827F-6285D8F689AA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ThreeKingdomsPass</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>81211B9EB8C329D4C57C0AF6CF86A0BD3B14F800</key>
 		<string>https://github.com/liuliansgser/ThreeKingdomsPass.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ThreeKingdomsPass/ThreeKingdomsPass.xcodeproj/project.xcworkspace</string>
+	<string>ThreeKingdomsPass/ThreeKingdomsPass.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>81211B9EB8C329D4C57C0AF6CF86A0BD3B14F800</key>
