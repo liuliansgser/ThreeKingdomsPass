@@ -44,12 +44,35 @@
     [self.cards enumerateObjectsUsingBlock:^(TKGameCardData *data, NSUInteger idx, BOOL *stop) {
         TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
         cardView.delegate = self;
-        cardView.tag = idx;
+        cardView.tag = idx+100;
         [self addSubview:cardView];
         [self.views addObject:cardView];
         
     }];
     self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+}
+
+- (void)tapCardView:(TKGameCardView *)view
+{
+    NSArray *tap = [self.views bk_select:^BOOL(TKGameCardView *view) {
+        return view.isTap;
+    }];
+    NSInteger n = [tap count];
+    for(NSInteger i = 0; i < n; i++){
+        TKGameCardView *cardView = (TKGameCardView *)tap[i];
+        [UIView animateWithDuration:0.25 delay:0.03*i options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cardView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            cardView.isTap = NO;
+        }];
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        view.transform = view.isTap?CGAffineTransformIdentity:CGAffineTransformMakeTranslation(0, -10);
+        view.isTap = !view.isTap;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)dragCardViewChange:(TKGameCardView *)view
@@ -89,9 +112,9 @@
     NSMutableArray *views = self.views;
     NSMutableArray *cards = self.cards;
     
-    NSObject *objTemp = [self.cards objectAtIndex:view.tag];
-    [views removeObjectAtIndex:view.tag];
-    [cards removeObjectAtIndex:view.tag];
+    NSObject *objTemp = [self.cards objectAtIndex:(view.tag-100)];
+    [views removeObjectAtIndex:(view.tag-100)];
+    [cards removeObjectAtIndex:(view.tag-100)];
     if (insertIndex >= views.count) {
         [views addObject:view];
         [cards addObject:objTemp];
@@ -113,24 +136,28 @@
     NSInteger n = [self.cards count];
     for(NSInteger i = 0; i < n; i++){
         TKGameCardView *cardView = (TKGameCardView *)self.views[i];
-        cardView.tag = i;
+        cardView.tag = i+100;
+        cardView.transform = CGAffineTransformIdentity;
+        cardView.isTap = NO;
         CGRect rect = CGRectMake(1.f+i*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     
         if (exceptIndex == i) {
-            // 重置碰撞区域
+            //重置碰撞区域
             cardView.crashTestRect = CGRectInset(rect, 20.f, 10.f);
             continue;
         }
         [UIView animateWithDuration:0.25 delay:0.03*i options:UIViewAnimationOptionCurveEaseOut animations:^{
             cardView.frame = rect;
-        } completion:^(BOOL finished) {}];
+        } completion:^(BOOL finished) {
+            
+        }];
     }
 }
 
 - (void)dragCardViewEnd:(TKGameCardView *)view
 {
     NSUInteger index = view.tag;
-    CGRect rect = CGRectMake(1.f+index*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect rect = CGRectMake(1.f+(index-100)*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         view.frame = rect;
     } completion:^(BOOL finished) {

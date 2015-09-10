@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak, readonly) TKGameCardData *data;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, unsafe_unretained) CGPoint startOffset;
 
@@ -37,8 +38,14 @@
         self.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_data.image]];
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 4.f;
+        self.isTap = NO;
         
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCardView:)];
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panCardView:)];
+        
+        [_tapGesture requireGestureRecognizerToFail:_panGesture];
+        
+        [self addGestureRecognizer:_tapGesture];
         [self addGestureRecognizer:_panGesture];
     }
     return self;
@@ -49,6 +56,13 @@
     [super setFrame:frame];
     // 更新碰撞区域
     self.crashTestRect = CGRectInset(self.frame, 20.f, 10.f);
+}
+
+- (void)tapCardView:(UIPanGestureRecognizer *)sender
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tapCardView:)]){
+        [self.delegate tapCardView:self];
+    }
 }
 
 - (void)panCardView:(UIPanGestureRecognizer *)sender
