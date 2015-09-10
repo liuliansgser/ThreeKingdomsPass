@@ -11,13 +11,10 @@
 #import "TKGameCardView.h"
 #import "NSArray+BlocksKit.h"
 
-@interface TKGameUserHandCardsScrollView ()
+@interface TKGameUserHandCardsScrollView () <TKGameCardViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *sortingCards;
-@property (nonatomic, strong) NSArray *cards;
-@property (nonatomic, strong) NSString *beforeName;
-@property (nonatomic, unsafe_unretained) NSUInteger tightenCount;
-@property (nonatomic, unsafe_unretained) NSUInteger lastTag;
+@property (nonatomic, strong) NSMutableArray *cards;
+@property (nonatomic, strong) NSMutableArray *views;
 
 @end
 
@@ -26,8 +23,10 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor clearColor];
-        self.sortingCards = [NSMutableArray array];
+        self.backgroundColor = [UIColor colorWithWhite:.2f alpha:.8f];
+        self.showsHorizontalScrollIndicator = NO;
+        self.clipsToBounds = NO;
+        self.views = [NSMutableArray array];
     }
     return self;
 }
@@ -42,62 +41,151 @@
         }
     }
     
-    __weak TKGameUserHandCardsScrollView *me = self;
-    
     [self.cards enumerateObjectsUsingBlock:^(TKGameCardData *data, NSUInteger idx, BOOL *stop) {
-        NSLog(@"[%@]:[%@]",me.beforeName,data.name);
-        BOOL isSameName = [me.beforeName isEqualToString:data.name]?YES:NO;
-        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(idx*(TK_CARD_USERHAND_WIDTH+1.f)-(isSameName?(TK_CARD_USERHAND_WIDTH-10.f):0.f)-(me.tightenCount*(TK_CARD_USERHAND_WIDTH-10.f)), 0, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
+        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
+        cardView.delegate = self;
+        cardView.tag = idx+100;
         [self addSubview:cardView];
-        if (isSameName) me.tightenCount++;
-        me.beforeName = data.name;
-        cardView.tag = idx;
-        me.lastTag = idx;
+        [self.views addObject:cardView];
+        
     }];
-    
-    TKGameCardView *lastView = (TKGameCardView *)[self viewWithTag:self.lastTag];
-    self.contentSize = CGSizeMake(lastView.frame.origin.x+TK_CARD_USERHAND_WIDTH, 0);
+    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
 }
 
-- (void)sorting
+- (void)addCardData:(TKGameCardData *)data
 {
-    [self.sortingCards removeAllObjects];
-    self.beforeName = nil;
-    self.tightenCount = 0;
-    self.lastTag = 0;
+    CGRect start = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f)+TK_CARD_USERHAND_WIDTH/2, 1.f-TK_CARD_USERHAND_HEIGHT/2, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect end = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     
-    [self _soringWithName:@"杀"];
-    [self _soringWithName:@"闪"];
-    [self _soringWithName:@"桃"];
-    [self _soringWithType:CardTypeTrick];
-    [self _soringWithType:CardTypeWeapon];
-    [self _soringWithType:CardTypeArmor];
-    [self _soringWithType:CardTypeDHorse];
-    [self _soringWithType:CardTypeAHorse];
+    TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:start WithCardData:data];
+    cardView.transform = CGAffineTransformMakeRotation(M_PI_2/2);
+    cardView.delegate = self;
+    cardView.tag = [self.cards count]+100;
+    [self addSubview:cardView];
     
-    [self updateItemsWithCards:self.sortingCards];
+    [self.cards addObject:data];
+    [self.views addObject:cardView];
+    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        cardView.transform = CGAffineTransformMakeRotation(0);
+        cardView.frame = end;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
-- (void)_soringWithName:(NSString *)name
+- (void)tapCardView:(TKGameCardView *)view
 {
-    NSArray *array = [self.cards bk_select:^BOOL(TKGameCardData *data) {
-        return [data.name isEqualToString:name];
+    NSArray *tap = [self.views bk_select:^BOOL(TKGameCardView *view) {
+        return view.isTap;
     }];
+    NSInteger n = [tap count];
+    for(NSInteger i = 0; i < n; i++){
+        TKGameCardView *cardView = (TKGameCardView *)tap[i];
+        [UIView animateWithDuration:0.25 delay:0.03*i options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cardView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            cardView.isTap = NO;
+        }];
+    }
     
-    if ([array count] > 0) {
-        [self.sortingCards addObjectsFromArray:array];
+    [UIView animateWithDuration:0.25 animations:^{
+        view.transform = view.isTap?CGAffineTransformIdentity:CGAffineTransformMakeTranslation(0, -10);
+        view.isTap = !view.isTap;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)dragCardViewChange:(TKGameCardView *)view
+{
+    NSInteger insertIndex = view.tag;
+    NSInteger isDrag = 0;
+    [self _calculateDragArea:&isDrag andInsertIndex:&insertIndex forCardView:view];
+    [self _adjustAreaItem:view insertIndex:insertIndex];
+}
+
+- (void)_calculateDragArea:(NSInteger *)areaNum andInsertIndex:(NSInteger *)insertIndex forCardView:(TKGameCardView *)view
+{
+    *insertIndex = [self _confirmTheInsertIndexWithArray:[self.views copy] forCardView:view];
+    *areaNum = -1;
+}
+
+- (NSInteger)_confirmTheInsertIndexWithArray:(NSArray *)array forCardView:(TKGameCardView *)view
+{
+    NSInteger insertIndex = array.count;
+    for (NSInteger i = 0;i < array.count; i++) {
+        TKGameCardView *card = (TKGameCardView *)array[i];
+        if (CGRectIntersectsRect(view.frame, card.crashTestRect)) {
+            insertIndex = i;
+            break;
+        }
+    }
+    
+    return insertIndex;
+}
+
+- (void)_adjustAreaItem:(TKGameCardView *)view insertIndex:(NSInteger)insertIndex
+{
+    if (view.tag == insertIndex) {
+        return;
+    }
+    
+    NSMutableArray *views = self.views;
+    NSMutableArray *cards = self.cards;
+    
+    NSObject *objTemp = [self.cards objectAtIndex:(view.tag-100)];
+    [views removeObjectAtIndex:(view.tag-100)];
+    [cards removeObjectAtIndex:(view.tag-100)];
+    if (insertIndex >= views.count) {
+        [views addObject:view];
+        [cards addObject:objTemp];
+    }else{
+        [views insertObject:view atIndex:insertIndex];
+        [cards insertObject:objTemp atIndex:insertIndex];
+    }
+    
+    NSInteger exceptionIndex = [views indexOfObject:view];
+    [views enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [(TKGameCardView *)obj setTag:-1];
+    }];
+    view.tag = exceptionIndex;
+    [self _layoutExceptIndex:exceptionIndex];
+}
+
+- (void)_layoutExceptIndex:(NSInteger)exceptIndex
+{
+    NSInteger n = [self.cards count];
+    for(NSInteger i = 0; i < n; i++){
+        TKGameCardView *cardView = (TKGameCardView *)self.views[i];
+        cardView.tag = i+100;
+        cardView.transform = CGAffineTransformIdentity;
+        cardView.isTap = NO;
+        CGRect rect = CGRectMake(1.f+i*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    
+        if (exceptIndex == i) {
+            //重置碰撞区域
+            cardView.crashTestRect = CGRectInset(rect, 20.f, 10.f);
+            continue;
+        }
+        [UIView animateWithDuration:0.25 delay:0.03*i options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cardView.frame = rect;
+        } completion:^(BOOL finished) {
+            
+        }];
     }
 }
 
-- (void)_soringWithType:(CardType)type
+- (void)dragCardViewEnd:(TKGameCardView *)view
 {
-    NSArray *array = [self.cards bk_select:^BOOL(TKGameCardData *data) {
-        return data.type == type;
+    NSUInteger index = view.tag;
+    CGRect rect = CGRectMake(1.f+(index-100)*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        view.frame = rect;
+    } completion:^(BOOL finished) {
+        
     }];
-    
-    if ([array count] > 0) {
-        [self.sortingCards addObjectsFromArray:array];
-    }
 }
 
 /*

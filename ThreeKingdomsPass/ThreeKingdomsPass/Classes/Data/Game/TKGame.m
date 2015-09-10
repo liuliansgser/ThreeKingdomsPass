@@ -42,4 +42,36 @@ TK_SINGLETION_m(TKGloble)
     return self.normalcards;
 }
 
+- (NSArray *)shuffleTheCardsWithCardsArray:(NSArray *)cards
+{
+    if ([cards count] == 0) NSAssert(false, @"需要洗混的牌堆不能为空");
+    
+    NSInteger index = 0;
+    NSInteger length = [cards count];
+    NSDictionary *temp = nil;
+    NSInteger value = 0;
+    
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:cards];
+    
+    for(index = 0; index < length; index++){
+        value = index + arc4random() % (length - index);
+        temp = tempArray[index];
+        tempArray[index] = tempArray[value];
+        tempArray[value] = temp;
+    }
+    
+    return tempArray;
+}
+
+- (void)supplementWithCount:(NSInteger)count
+{
+    //如果需要新牌堆
+    if ([_playCards count] < count) {
+        //洗混弃牌堆
+        NSArray *newCards = [self shuffleTheCardsWithCardsArray:_dropCards];
+        [_playCards addObjectsFromArray:newCards];
+        [_dropCards removeAllObjects];
+    }
+}
+
 @end

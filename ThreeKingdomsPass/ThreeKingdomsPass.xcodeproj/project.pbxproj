@@ -16,6 +16,8 @@
 		1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1B81B9189EB000A2615 /* Images.xcassets */; };
 		1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1BA1B9189EB000A2615 /* LaunchScreen.xib */; };
 		1C15D1C81B9189EB000A2615 /* ThreeKingdomsPassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */; };
+		1C2B860A1BA1DED500AACFAC /* TKGamePlayCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */; };
+		1C2B860C1BA1E07C00AACFAC /* card_background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */; };
 		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
 		1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */; };
 		1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */; };
@@ -114,6 +116,9 @@
 		1C15D1C11B9189EB000A2615 /* ThreeKingdomsPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeKingdomsPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1C61B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeKingdomsPassTests.m; sourceTree = "<group>"; };
+		1C2B86081BA1DED500AACFAC /* TKGamePlayCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGamePlayCardView.h; sourceTree = "<group>"; };
+		1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGamePlayCardView.m; sourceTree = "<group>"; };
+		1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_background_image.jpg; sourceTree = "<group>"; };
 		1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background.jpg; sourceTree = "<group>"; };
 		1C6F4AEE1B9FF59300BED00F /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
 		1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
@@ -245,6 +250,8 @@
 				1C11C2E51BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m */,
 				1C11C2E71BA0655900A04BCD /* TKGameCardView.h */,
 				1C11C2E81BA0655900A04BCD /* TKGameCardView.m */,
+				1C2B86081BA1DED500AACFAC /* TKGamePlayCardView.h */,
+				1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -364,6 +371,7 @@
 		1CEF64651BA032450014C550 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */,
 				1CEF64691BA032450014C550 /* card_sha_image.jpg */,
 				1CEF646A1BA032450014C550 /* card_shan_image.jpg */,
 				1CEF646B1BA032450014C550 /* card_tao_image.jpg */,
@@ -680,6 +688,7 @@
 				1CEF64B91BA032450014C550 /* card_wugufengdeng_image.jpg in Resources */,
 				1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */,
 				1CEF64A31BA032450014C550 /* card_qilingong_image.jpg in Resources */,
+				1C2B860C1BA1E07C00AACFAC /* card_background_image.jpg in Resources */,
 				1CEF649D1BA032450014C550 /* card_dilu_image.jpg in Resources */,
 				1CEF64B41BA032450014C550 /* card_shandian_image.jpg in Resources */,
 				1CEF64A51BA032450014C550 /* card_qinglongyanyuedao_image.jpg in Resources */,
@@ -726,6 +735,7 @@
 				1CF538081B93FF5600FBA3F3 /* NSMutableArray+BlocksKit.m in Sources */,
 				1CF5380A1B93FF5600FBA3F3 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				1C11C2E91BA0655900A04BCD /* TKGameCardView.m in Sources */,
+				1C2B860A1BA1DED500AACFAC /* TKGamePlayCardView.m in Sources */,
 				1CF538131B93FF5600FBA3F3 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				1CF538041B93FF5600FBA3F3 /* NSDictionary+BlocksKit.m in Sources */,
 				1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */,
@@ -875,7 +885,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
+				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
 			};
 			name = Debug;
 		};
@@ -887,7 +897,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
+				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
 			};
 			name = Release;
 		};

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKGameCardData.h"
 
 @interface TKGameUserHandCardsScrollView : UIScrollView
 
 - (void)updateItemsWithCards:(NSArray *)cards;
-
-//排序
-- (void)sorting;
+- (void)addCardData:(TKGameCardData *)data;
 
 @end
