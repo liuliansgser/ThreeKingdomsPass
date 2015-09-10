@@ -52,6 +52,10 @@ alpha: 1.0]                                  \
 #define TK_CARD_SLOPE 5.f/7.f
 #define TK_CARD_USERHAND_HEIGHT TK_SCREEN_HEIGHT/5.f
 #define TK_CARD_USERHAND_WIDTH (TK_CARD_USERHAND_HEIGHT)*(TK_CARD_SLOPE)
+#define TK_CARD_MOVETIME_MIN 0.5
+
+//game
+#define TK_GAME [TKGame sharedInstance]
 
 
 #endif

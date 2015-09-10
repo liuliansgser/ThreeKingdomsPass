@@ -23,6 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    TK_GAME.playCards = [NSMutableArray arrayWithArray:[TK_GAME shuffleTheCardsWithCardsArray:TK_GAME.normalcards]];
+    
+    [self _createFunctionItems];
+    
+    [self _createUserHandsView];
+    
+}
+
+- (void)_createFunctionItems
+{
     UIImageView *backGroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     backGroundImageView.image = [UIImage imageNamed:@"game_background.jpg"];
     backGroundImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -37,18 +48,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
-    
-    UIButton *sortingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sortingButton.frame = CGRectMake(0, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT-startButtonFontSize*2, startButtonFontSize*6, startButtonFontSize*2);
-    [sortingButton setTitle:@"智能排序" forState:UIControlStateNormal];
-    sortingButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
-    __weak TKGameViewController *me = self;
-    [sortingButton bk_addEventHandler:^(UIButton *sender) {
-        [me.handCardsView sorting];
-    } forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sortingButton];
-    
-    [self _createUserHandsView];
 }
 
 - (void)_createUserHandsView
@@ -56,7 +55,11 @@
     _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0.f, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT)];
     [self.view addSubview:_handCardsView];
     
-    [_handCardsView updateItemsWithCards:[TKGame sharedInstance].normalcards];
+    NSMutableArray *cards = [NSMutableArray array];
+    for (NSUInteger i = 0; i < 10; i++) {
+        [cards addObject:TK_GAME.playCards[i]];
+    }
+    [_handCardsView updateItemsWithCards:[NSMutableArray arrayWithArray:cards]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,7 +12,4 @@
 
 - (void)updateItemsWithCards:(NSArray *)cards;
 
-//排序
-- (void)sorting;
-
 @end
