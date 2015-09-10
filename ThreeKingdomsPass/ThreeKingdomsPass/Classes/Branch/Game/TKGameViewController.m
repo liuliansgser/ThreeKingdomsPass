@@ -36,8 +36,17 @@
 {
     UIImageView *backGroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     backGroundImageView.image = [UIImage imageNamed:@"game_background.jpg"];
+    backGroundImageView.userInteractionEnabled = YES;
     backGroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:backGroundImageView];
+    
+    UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGameView:)];
+    [swipeGestureLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [backGroundImageView addGestureRecognizer:swipeGestureLeft];
+    
+    UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGameView:)];
+    [swipeGestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [backGroundImageView addGestureRecognizer:swipeGestureRight];
     
     CGFloat startButtonFontSize = TK_SCREEN_5S(15.f);
     UIButton *startButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -48,6 +57,26 @@
         [self.navigationController popViewControllerAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
+}
+
+- (void)swipeGameView:(UISwipeGestureRecognizer *)sender
+{
+    CGFloat contentSize = _handCardsView.contentSize.width;
+    switch (sender.direction) {
+        case UISwipeGestureRecognizerDirectionLeft: {
+            if ((_handCardsView.contentOffset.x+_handCardsView.frame.size.width) > contentSize) return;
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x+_handCardsView.frame.size.width), 0) animated:YES];
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionRight: {
+            if (_handCardsView.contentOffset.x <= 0) return;
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x-_handCardsView.frame.size.width), 0) animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)_createUserHandsView
