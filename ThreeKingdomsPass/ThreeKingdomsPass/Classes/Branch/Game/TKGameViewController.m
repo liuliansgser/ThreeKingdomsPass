@@ -65,12 +65,12 @@
     switch (sender.direction) {
         case UISwipeGestureRecognizerDirectionLeft: {
             if ((_handCardsView.contentOffset.x+_handCardsView.frame.size.width) > contentSize) return;
-            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x+_handCardsView.frame.size.width), 0) animated:YES];
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x+8*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
         }
             break;
         case UISwipeGestureRecognizerDirectionRight: {
             if (_handCardsView.contentOffset.x <= 0) return;
-            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x-_handCardsView.frame.size.width), 0) animated:YES];
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x-8*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
         }
             break;
             
@@ -81,7 +81,10 @@
 
 - (void)_createUserHandsView
 {
-    _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0.f, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT)];
+    CGFloat rightwidth = 135.f;
+    CGFloat leftwidth = 95.f;
+    
+    _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(leftwidth, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH-leftwidth-rightwidth, TK_CARD_USERHAND_HEIGHT)];
     [self.view addSubview:_handCardsView];
     
     NSMutableArray *cards = [NSMutableArray array];
@@ -89,6 +92,18 @@
         [cards addObject:TK_GAME.playCards[i]];
     }
     [_handCardsView updateItemsWithCards:[NSMutableArray arrayWithArray:cards]];
+    
+    UIImageView *userView = [[UIImageView alloc] initWithFrame:CGRectMake(0, TK_SCREEN_HEIGHT-leftwidth, leftwidth, leftwidth)];
+    userView.backgroundColor = [UIColor clearColor];
+    userView.image = [UIImage imageNamed:@"game_background_left.jpg"];
+    userView.userInteractionEnabled = YES;
+    [self.view addSubview:userView];
+    
+    UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(TK_SCREEN_WIDTH-rightwidth, TK_SCREEN_HEIGHT-rightwidth, rightwidth, rightwidth)];
+    iconView.backgroundColor = [UIColor clearColor];
+    iconView.image = [UIImage imageNamed:@"game_background_right.jpg"];
+    iconView.userInteractionEnabled = YES;
+    [self.view addSubview:iconView];
 }
 
 - (void)didReceiveMemoryWarning {

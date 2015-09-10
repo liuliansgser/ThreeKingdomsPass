@@ -19,6 +19,8 @@
 		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
 		1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */; };
 		1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */; };
+		1C9DB49F1BA1998B00FB1276 /* game_background_left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */; };
+		1C9DB4A11BA19B5D00FB1276 /* game_background_right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */; };
 		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
 		1CEF645F1BA01EFB0014C550 /* card.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF645C1BA01EFB0014C550 /* card.pass */; };
 		1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */; };
@@ -119,6 +121,8 @@
 		1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		1C6F4AF01B9FF59300BED00F /* TransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
 		1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
+		1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background_left.jpg; sourceTree = "<group>"; };
+		1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background_right.jpg; sourceTree = "<group>"; };
 		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1CEF645C1BA01EFB0014C550 /* card.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = card.pass; sourceTree = "<group>"; };
 		1CEF645D1BA01EFB0014C550 /* TKGameCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameCardData.h; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 		1CE686261B95B28000C73E81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */,
+				1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */,
 				1CEF64641BA032450014C550 /* CardImages */,
 				1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */,
 				1CE686271B95B28000C73E81 /* background.jpg */,
@@ -658,6 +664,7 @@
 				1CEF649A1BA032450014C550 /* card_chitu_image.jpg in Resources */,
 				1CEF645F1BA01EFB0014C550 /* card.pass in Resources */,
 				1CEF64A91BA032450014C550 /* card_zhuahuangfeidian_image.jpg in Resources */,
+				1C9DB4A11BA19B5D00FB1276 /* game_background_right.jpg in Resources */,
 				1CEF649B1BA032450014C550 /* card_cixiongshuanggujian_image.jpg in Resources */,
 				1CEF64961BA032450014C550 /* card_shan_image.jpg in Resources */,
 				1CEF64AE1BA032450014C550 /* card_guohechaiqiao_image.jpg in Resources */,
@@ -673,6 +680,7 @@
 				1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */,
 				1CEF64B11BA032450014C550 /* card_juedou_image.jpg in Resources */,
 				1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */,
+				1C9DB49F1BA1998B00FB1276 /* game_background_left.jpg in Resources */,
 				1CEF649C1BA032450014C550 /* card_dawan_image.jpg in Resources */,
 				1CEF64BB1BA032450014C550 /* card_wuzhongshengyou_image.jpg in Resources */,
 				1CEF64BA1BA032450014C550 /* card_wuxiekeji_image.jpg in Resources */,
