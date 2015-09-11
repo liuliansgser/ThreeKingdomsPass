@@ -40,7 +40,7 @@
         self.layer.cornerRadius = 4.f;
         self.isTap = NO;
         
-        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCardView:)];
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCard:)];
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panCardView:)];
         
         [_tapGesture requireGestureRecognizerToFail:_panGesture];
@@ -58,7 +58,7 @@
     self.crashTestRect = CGRectInset(self.frame, 20.f, 10.f);
 }
 
-- (void)tapCardView:(UIPanGestureRecognizer *)sender
+- (void)tapCard:(UITapGestureRecognizer *)sender
 {
     if(self.delegate && [self.delegate respondsToSelector:@selector(tapCardView:)]){
         [self.delegate tapCardView:self];

@@ -23,10 +23,11 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithWhite:.2f alpha:.8f];
         self.showsHorizontalScrollIndicator = NO;
         self.clipsToBounds = NO;
         self.views = [NSMutableArray array];
+        self.isDropStatus = NO;
     }
     return self;
 }
@@ -42,7 +43,7 @@
     }
     
     [self.cards enumerateObjectsUsingBlock:^(TKGameCardData *data, NSUInteger idx, BOOL *stop) {
-        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
+        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
         cardView.delegate = self;
         cardView.tag = idx+100;
         [self addSubview:cardView];
@@ -50,6 +51,30 @@
         
     }];
     self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+}
+
+- (void)addSingleCardData:(TKGameCardData *)data
+{
+    CGRect start = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f)+TK_CARD_USERHAND_WIDTH/2, 1.f-TK_CARD_USERHAND_HEIGHT/2, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect end = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    
+    TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:start WithCardData:data];
+    cardView.transform = CGAffineTransformMakeRotation(M_PI_2/2);
+    cardView.delegate = self;
+    cardView.tag = [self.cards count]+100;
+    [self addSubview:cardView];
+    
+    [self.cards addObject:data];
+    [self.views addObject:cardView];
+    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+    [self setContentOffset:CGPointMake(0, 0) animated:YES];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        cardView.transform = CGAffineTransformMakeRotation(0);
+        cardView.frame = end;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)tapCardView:(TKGameCardView *)view
@@ -139,7 +164,7 @@
         cardView.tag = i+100;
         cardView.transform = CGAffineTransformIdentity;
         cardView.isTap = NO;
-        CGRect rect = CGRectMake(1.f+i*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+        CGRect rect = CGRectMake(1.f+i*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     
         if (exceptIndex == i) {
             //重置碰撞区域
@@ -154,10 +179,44 @@
     }
 }
 
+- (void)_layoutDropIndex:(NSInteger)dropIndex
+{
+    NSInteger n = [self.cards count];
+    for(NSInteger i = dropIndex; i < n; i++){
+        TKGameCardView *cardView = (TKGameCardView *)self.views[i];
+        cardView.tag = i+100;
+        cardView.transform = CGAffineTransformIdentity;
+        cardView.isTap = NO;
+        CGRect rect = CGRectMake(1.f+i*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+        
+        if (dropIndex == i) {
+            //重置碰撞区域
+            cardView.crashTestRect = CGRectInset(rect, 20.f, 10.f);
+            continue;
+        }
+        [UIView animateWithDuration:0.25 delay:0.03*i options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cardView.frame = rect;
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
 - (void)dragCardViewEnd:(TKGameCardView *)view
 {
+    if (self.isDropStatus) {
+        if (fabs(CGRectGetMinY(view.frame)) >= TK_SCREEN_HEIGHT/4.f) {
+            NSLog(@"可以弃牌区域");
+            [self.views removeObjectAtIndex:(view.tag-100)];
+            [self.cards removeObjectAtIndex:(view.tag-100)];
+            [self _layoutDropIndex:(view.tag-100)];
+            [view removeFromSuperview];
+            return;
+        }
+    }
+    
     NSUInteger index = view.tag;
-    CGRect rect = CGRectMake(1.f+(index-100)*(TK_CARD_USERHAND_WIDTH+1.f), -1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect rect = CGRectMake(1.f+(index-100)*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         view.frame = rect;
     } completion:^(BOOL finished) {

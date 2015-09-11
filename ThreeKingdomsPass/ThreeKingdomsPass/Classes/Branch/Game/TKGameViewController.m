@@ -11,8 +11,9 @@
 #import "UIControl+BlocksKit.h"
 #import "TKGame.h"
 #import "TKGameUserHandCardsScrollView.h"
+#import "TKGamePlayCardView.h"
 
-@interface TKGameViewController ()
+@interface TKGameViewController () <TKGamePlayCardViewDelegate>
 
 @property (nonatomic, strong) TKGameUserHandCardsScrollView *handCardsView;
 
@@ -29,6 +30,8 @@
     [self _createFunctionItems];
     
     [self _createUserHandsView];
+    
+    [self _createPlayCardView];
     
 }
 
@@ -60,17 +63,17 @@
 }
 
 - (void)swipeGameView:(UISwipeGestureRecognizer *)sender
-{
+{    
     CGFloat contentSize = _handCardsView.contentSize.width;
     switch (sender.direction) {
         case UISwipeGestureRecognizerDirectionLeft: {
             if ((_handCardsView.contentOffset.x+_handCardsView.frame.size.width) > contentSize) return;
-            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x+8*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x+12*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
         }
             break;
         case UISwipeGestureRecognizerDirectionRight: {
             if (_handCardsView.contentOffset.x <= 0) return;
-            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x-8*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
+            [_handCardsView setContentOffset:CGPointMake((_handCardsView.contentOffset.x-12*(TK_CARD_USERHAND_WIDTH+1.f)), 0) animated:YES];
         }
             break;
             
@@ -81,29 +84,27 @@
 
 - (void)_createUserHandsView
 {
-    CGFloat rightwidth = 135.f;
-    CGFloat leftwidth = 95.f;
-    
-    _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(leftwidth, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT, TK_SCREEN_WIDTH-leftwidth-rightwidth, TK_CARD_USERHAND_HEIGHT)];
+    _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT-2.f, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT+2.f)];
     [self.view addSubview:_handCardsView];
     
     NSMutableArray *cards = [NSMutableArray array];
-    for (NSUInteger i = 0; i < 10; i++) {
+    for (NSUInteger i = 0; i < 8; i++) {
         [cards addObject:TK_GAME.playCards[i]];
     }
     [_handCardsView updateItemsWithCards:[NSMutableArray arrayWithArray:cards]];
-    
-    UIImageView *userView = [[UIImageView alloc] initWithFrame:CGRectMake(0, TK_SCREEN_HEIGHT-leftwidth, leftwidth, leftwidth)];
-    userView.backgroundColor = [UIColor clearColor];
-    userView.image = [UIImage imageNamed:@"game_background_left.jpg"];
-    userView.userInteractionEnabled = YES;
-    [self.view addSubview:userView];
-    
-    UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(TK_SCREEN_WIDTH-rightwidth, TK_SCREEN_HEIGHT-rightwidth, rightwidth, rightwidth)];
-    iconView.backgroundColor = [UIColor clearColor];
-    iconView.image = [UIImage imageNamed:@"game_background_right.jpg"];
-    iconView.userInteractionEnabled = YES;
-    [self.view addSubview:iconView];
+}
+
+- (void)_createPlayCardView
+{
+    TKGamePlayCardView *play = [[TKGamePlayCardView alloc] initWithFrame:CGRectMake(0, 0, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT)];
+    play.center = self.view.center;
+    play.delegate = self;
+    [self.view addSubview:play];
+}
+
+- (void)userGetCard
+{
+    [_handCardsView addSingleCardData:TK_GAME.playCards[30]];
 }
 
 - (void)didReceiveMemoryWarning {

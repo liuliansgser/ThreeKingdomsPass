@@ -16,11 +16,11 @@
 		1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1B81B9189EB000A2615 /* Images.xcassets */; };
 		1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D1BA1B9189EB000A2615 /* LaunchScreen.xib */; };
 		1C15D1C81B9189EB000A2615 /* ThreeKingdomsPassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */; };
+		1C2B860A1BA1DED500AACFAC /* TKGamePlayCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */; };
+		1C2B860C1BA1E07C00AACFAC /* card_background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */; };
 		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
 		1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */; };
 		1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */; };
-		1C9DB49F1BA1998B00FB1276 /* game_background_left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */; };
-		1C9DB4A11BA19B5D00FB1276 /* game_background_right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */; };
 		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
 		1CEF645F1BA01EFB0014C550 /* card.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF645C1BA01EFB0014C550 /* card.pass */; };
 		1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */; };
@@ -116,13 +116,14 @@
 		1C15D1C11B9189EB000A2615 /* ThreeKingdomsPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeKingdomsPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C15D1C61B9189EB000A2615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C15D1C71B9189EB000A2615 /* ThreeKingdomsPassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeKingdomsPassTests.m; sourceTree = "<group>"; };
+		1C2B86081BA1DED500AACFAC /* TKGamePlayCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGamePlayCardView.h; sourceTree = "<group>"; };
+		1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGamePlayCardView.m; sourceTree = "<group>"; };
+		1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card_background_image.jpg; sourceTree = "<group>"; };
 		1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background.jpg; sourceTree = "<group>"; };
 		1C6F4AEE1B9FF59300BED00F /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
 		1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		1C6F4AF01B9FF59300BED00F /* TransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
 		1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
-		1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background_left.jpg; sourceTree = "<group>"; };
-		1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_background_right.jpg; sourceTree = "<group>"; };
 		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1CEF645C1BA01EFB0014C550 /* card.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = card.pass; sourceTree = "<group>"; };
 		1CEF645D1BA01EFB0014C550 /* TKGameCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameCardData.h; sourceTree = "<group>"; };
@@ -249,6 +250,8 @@
 				1C11C2E51BA0653C00A04BCD /* TKGameUserHandCardsScrollView.m */,
 				1C11C2E71BA0655900A04BCD /* TKGameCardView.h */,
 				1C11C2E81BA0655900A04BCD /* TKGameCardView.m */,
+				1C2B86081BA1DED500AACFAC /* TKGamePlayCardView.h */,
+				1C2B86091BA1DED500AACFAC /* TKGamePlayCardView.m */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -328,8 +331,6 @@
 		1CE686261B95B28000C73E81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1C9DB4A01BA19B5D00FB1276 /* game_background_right.jpg */,
-				1C9DB49E1BA1998B00FB1276 /* game_background_left.jpg */,
 				1CEF64641BA032450014C550 /* CardImages */,
 				1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */,
 				1CE686271B95B28000C73E81 /* background.jpg */,
@@ -370,6 +371,7 @@
 		1CEF64651BA032450014C550 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				1C2B860B1BA1E07C00AACFAC /* card_background_image.jpg */,
 				1CEF64691BA032450014C550 /* card_sha_image.jpg */,
 				1CEF646A1BA032450014C550 /* card_shan_image.jpg */,
 				1CEF646B1BA032450014C550 /* card_tao_image.jpg */,
@@ -664,7 +666,6 @@
 				1CEF649A1BA032450014C550 /* card_chitu_image.jpg in Resources */,
 				1CEF645F1BA01EFB0014C550 /* card.pass in Resources */,
 				1CEF64A91BA032450014C550 /* card_zhuahuangfeidian_image.jpg in Resources */,
-				1C9DB4A11BA19B5D00FB1276 /* game_background_right.jpg in Resources */,
 				1CEF649B1BA032450014C550 /* card_cixiongshuanggujian_image.jpg in Resources */,
 				1CEF64961BA032450014C550 /* card_shan_image.jpg in Resources */,
 				1CEF64AE1BA032450014C550 /* card_guohechaiqiao_image.jpg in Resources */,
@@ -680,7 +681,6 @@
 				1CEF64BD1BA038DF0014C550 /* Cards.xml in Resources */,
 				1CEF64B11BA032450014C550 /* card_juedou_image.jpg in Resources */,
 				1C15D1BC1B9189EB000A2615 /* LaunchScreen.xib in Resources */,
-				1C9DB49F1BA1998B00FB1276 /* game_background_left.jpg in Resources */,
 				1CEF649C1BA032450014C550 /* card_dawan_image.jpg in Resources */,
 				1CEF64BB1BA032450014C550 /* card_wuzhongshengyou_image.jpg in Resources */,
 				1CEF64BA1BA032450014C550 /* card_wuxiekeji_image.jpg in Resources */,
@@ -688,6 +688,7 @@
 				1CEF64B91BA032450014C550 /* card_wugufengdeng_image.jpg in Resources */,
 				1C15D1B91B9189EB000A2615 /* Images.xcassets in Resources */,
 				1CEF64A31BA032450014C550 /* card_qilingong_image.jpg in Resources */,
+				1C2B860C1BA1E07C00AACFAC /* card_background_image.jpg in Resources */,
 				1CEF649D1BA032450014C550 /* card_dilu_image.jpg in Resources */,
 				1CEF64B41BA032450014C550 /* card_shandian_image.jpg in Resources */,
 				1CEF64A51BA032450014C550 /* card_qinglongyanyuedao_image.jpg in Resources */,
@@ -734,6 +735,7 @@
 				1CF538081B93FF5600FBA3F3 /* NSMutableArray+BlocksKit.m in Sources */,
 				1CF5380A1B93FF5600FBA3F3 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				1C11C2E91BA0655900A04BCD /* TKGameCardView.m in Sources */,
+				1C2B860A1BA1DED500AACFAC /* TKGamePlayCardView.m in Sources */,
 				1CF538131B93FF5600FBA3F3 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				1CF538041B93FF5600FBA3F3 /* NSDictionary+BlocksKit.m in Sources */,
 				1CF538001B93FF5600FBA3F3 /* BaseViewController.m in Sources */,
@@ -883,7 +885,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
+				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
 			};
 			name = Debug;
 		};
@@ -895,7 +897,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
+				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
 			};
 			name = Release;
 		};

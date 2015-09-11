@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKGameCardData.h"
 
 @interface TKGameUserHandCardsScrollView : UIScrollView
 
+@property (nonatomic, unsafe_unretained) BOOL isDropStatus;
+
 - (void)updateItemsWithCards:(NSArray *)cards;
+- (void)addSingleCardData:(TKGameCardData *)data;
 
 @end
