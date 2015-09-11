@@ -66,8 +66,8 @@
     
     [self.cards addObject:data];
     [self.views addObject:cardView];
-    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
-    [self setContentOffset:CGPointMake(0, 0) animated:YES];
+    
+    [self _updateContentSize];
     
     [UIView animateWithDuration:0.25 animations:^{
         cardView.transform = CGAffineTransformMakeRotation(0);
@@ -206,11 +206,11 @@
 {
     if (self.isDropStatus) {
         if (fabs(CGRectGetMinY(view.frame)) >= TK_SCREEN_HEIGHT/4.f) {
-            NSLog(@"可以弃牌区域");
             [self.views removeObjectAtIndex:(view.tag-100)];
             [self.cards removeObjectAtIndex:(view.tag-100)];
             [self _layoutDropIndex:(view.tag-100)];
             [view removeFromSuperview];
+            [self _updateContentSize];
             return;
         }
     }
@@ -222,6 +222,15 @@
     } completion:^(BOOL finished) {
         
     }];
+}
+
+- (void)_updateContentSize
+{
+    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+    NSUInteger page = [self.cards count]/12;
+    if (([self.cards count])%12 == 0) page--;
+    CGFloat x = (12*(TK_CARD_USERHAND_WIDTH+1.f))*page;
+    [self setContentOffset:CGPointMake(x, 0) animated:NO];
 }
 
 /*

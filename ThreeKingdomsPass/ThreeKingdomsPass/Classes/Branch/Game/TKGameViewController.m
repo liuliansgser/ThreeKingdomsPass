@@ -51,15 +51,29 @@
     [swipeGestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [backGroundImageView addGestureRecognizer:swipeGestureRight];
     
+    __weak TKGameViewController *me = self;
+    
     CGFloat startButtonFontSize = TK_SCREEN_5S(15.f);
     UIButton *startButton = [UIButton buttonWithType:UIButtonTypeCustom];
     startButton.frame = CGRectMake(0, 0, startButtonFontSize*3, startButtonFontSize*2);
     [startButton setTitle:@"投降" forState:UIControlStateNormal];
     startButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
     [startButton bk_addEventHandler:^(UIButton *sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [me.navigationController popViewControllerAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
+    
+    UIButton *dropCardButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    dropCardButton.frame = CGRectMake(TK_SCREEN_WIDTH-startButtonFontSize*3, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT-2.f-startButtonFontSize*2, startButtonFontSize*3, startButtonFontSize*2);
+    [dropCardButton setTitle:@"弃牌" forState:UIControlStateNormal];
+    [dropCardButton setTitle:@"完成" forState:UIControlStateSelected];
+    [dropCardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    dropCardButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
+    [dropCardButton bk_addEventHandler:^(UIButton *sender) {
+        sender.selected = !sender.selected;
+        me.handCardsView.isDropStatus = !me.handCardsView.isDropStatus;
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:dropCardButton];
 }
 
 - (void)swipeGameView:(UISwipeGestureRecognizer *)sender
@@ -104,7 +118,8 @@
 
 - (void)userGetCard
 {
-    [_handCardsView addSingleCardData:TK_GAME.playCards[30]];
+    NSUInteger number = arc4random()%100;
+    [_handCardsView addSingleCardData:TK_GAME.playCards[number]];
 }
 
 - (void)didReceiveMemoryWarning {

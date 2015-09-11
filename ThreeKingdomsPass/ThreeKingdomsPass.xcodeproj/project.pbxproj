@@ -885,7 +885,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
+				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
 			};
 			name = Debug;
 		};
@@ -897,7 +897,7 @@
 				INFOPLIST_FILE = ThreeKingdomsPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c29e595e-98ea-474c-a5c8-db2a773bb428";
+				PROVISIONING_PROFILE = "1253d393-c4c0-4d1c-91a5-13b5cbe4c122";
 			};
 			name = Release;
 		};
