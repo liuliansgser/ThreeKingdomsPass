@@ -11,8 +11,6 @@
 
 @interface TKGameCardView ()
 
-@property (nonatomic, weak, readonly) TKGameCardData *data;
-
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, unsafe_unretained) CGPoint startOffset;
@@ -29,13 +27,10 @@
     _moveTimer = nil;
 }
 
-- (id)initWithFrame:(CGRect)frame WithCardData:(TKGameCardData *)data
+- (id)initWithFrame:(CGRect)frame
 {
-    _data = data;
-    
     if (self = [super initWithFrame:frame]) {
         self.userInteractionEnabled = YES;
-        self.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_data.image]];
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 4.f;
         self.isTap = NO;
@@ -56,6 +51,12 @@
     [super setFrame:frame];
     // 更新碰撞区域
     self.crashTestRect = CGRectInset(self.frame, 20.f, 10.f);
+}
+
+- (void)setCardData:(TKGameCardData *)data
+{
+    _data = data;
+    self.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_data.image]];
 }
 
 - (void)tapCard:(UITapGestureRecognizer *)sender

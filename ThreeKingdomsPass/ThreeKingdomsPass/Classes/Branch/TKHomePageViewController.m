@@ -31,7 +31,7 @@
     [self.view addSubview:backGroundImageView];
     
     self.navigationController.delegate = self;
-    
+    [[TKGloble sharedInstance] setUpGameDatas];
     [self _createBannerView];
 }
 
@@ -64,6 +64,8 @@
     
     _shimmeringView.contentView = navigationLabel;
     
+    __weak TKHomePageViewController *me = self;
+    
     CGFloat startButtonFontSize = TK_SCREEN_5S(15.f);
     UIButton *startButton = [UIButton buttonWithType:UIButtonTypeCustom];
     startButton.frame = CGRectMake(0, 0, startButtonFontSize*5, startButtonFontSize*2);
@@ -71,7 +73,7 @@
     [startButton setTitle:@"開始遊戲" forState:UIControlStateNormal];
     startButton.titleLabel.font = [UIFont fontWithName:TK_TraditionalTFF size:startButtonFontSize];
     [startButton bk_addEventHandler:^(UIButton *sender) {
-        [self.navigationController pushViewController:[TKGameViewController new] animated:YES];
+        [me.navigationController pushViewController:[TKGameViewController new] animated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
 }

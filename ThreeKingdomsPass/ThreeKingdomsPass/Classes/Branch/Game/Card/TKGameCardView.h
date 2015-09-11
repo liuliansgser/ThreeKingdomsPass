@@ -14,10 +14,11 @@
 @interface TKGameCardView : UIImageView
 
 @property (nonatomic, weak) id<TKGameCardViewDelegate> delegate;
+@property (nonatomic, weak, readonly) TKGameCardData *data;
 @property (nonatomic, unsafe_unretained) CGRect crashTestRect;
 @property (nonatomic, unsafe_unretained) BOOL isTap;
 
-- (id)initWithFrame:(CGRect)frame WithCardData:(TKGameCardData *)data;
+- (void)setCardData:(TKGameCardData *)data;
 
 @end
 

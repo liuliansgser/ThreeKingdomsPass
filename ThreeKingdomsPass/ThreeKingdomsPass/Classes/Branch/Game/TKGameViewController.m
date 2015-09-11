@@ -12,6 +12,7 @@
 #import "TKGame.h"
 #import "TKGameUserHandCardsScrollView.h"
 #import "TKGamePlayCardView.h"
+#import "TKRoleData+Event.h"
 
 @interface TKGameViewController () <TKGamePlayCardViewDelegate>
 
@@ -21,11 +22,16 @@
 
 @implementation TKGameViewController
 
+- (void)dealloc
+{
+    ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    TK_GAME.playCards = [NSMutableArray arrayWithArray:[TK_GAME shuffleTheCardsWithCardsArray:TK_GAME.normalcards]];
+    TK_GAME.playCards = [NSMutableArray arrayWithArray:[TK_GAME shuffleTheCardsWithCardsArray:[TKGloble sharedInstance].normalcards]];
     
     [self _createFunctionItems];
     
@@ -98,14 +104,14 @@
 
 - (void)_createUserHandsView
 {
+    TKRoleData *role = [TKGloble sharedInstance].roles[3];
+    
     _handCardsView = [[TKGameUserHandCardsScrollView alloc] initWithFrame:CGRectMake(0, TK_SCREEN_HEIGHT-TK_CARD_USERHAND_HEIGHT-2.f, TK_SCREEN_WIDTH, TK_CARD_USERHAND_HEIGHT+2.f)];
+    [_handCardsView setUpRole:role];
     [self.view addSubview:_handCardsView];
     
-    NSMutableArray *cards = [NSMutableArray array];
-    for (NSUInteger i = 0; i < 8; i++) {
-        [cards addObject:TK_GAME.playCards[i]];
-    }
-    [_handCardsView updateItemsWithCards:[NSMutableArray arrayWithArray:cards]];
+    if (role) [role getCardFromPlayCardsWithCount:4];
+    [_handCardsView updateItemsWithCards];
 }
 
 - (void)_createPlayCardView
@@ -118,8 +124,8 @@
 
 - (void)userGetCard
 {
-    NSUInteger number = arc4random()%100;
-    [_handCardsView addSingleCardData:TK_GAME.playCards[number]];
+    TKGameCardData *card = TK_GAME.playCards[0];
+    [_handCardsView addSingleCardData:card];
 }
 
 - (void)didReceiveMemoryWarning {

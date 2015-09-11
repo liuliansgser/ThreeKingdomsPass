@@ -1,0 +1,58 @@
+{
+    "normal": [
+        {
+            "roleID":"WEI_001",
+            "name":"曹操",
+            "camp":0,
+            "isMan":1,
+            "HPupperlimit":4,
+            "skills" : [
+                {
+                    "name":"奸雄"
+                },
+                {
+                    "name":"护驾"
+                }
+            ]
+        },
+        {
+            "roleID":"WEI_002",
+            "name":"司马懿",
+            "camp":0,
+            "isMan":1,
+            "HPupperlimit":3,
+            "skills" : [
+                {
+                    "name":"反馈"
+                },
+                {
+                    "name":"鬼才"
+                }
+            ]
+        },
+        {
+            "roleID":"WEI_003",
+            "name":"夏侯惇",
+            "camp":0,
+            "isMan":1,
+            "HPupperlimit":4,
+            "skills" : [
+                {
+                    "name":"刚烈"
+                }
+            ]
+        },
+        {
+            "roleID":"WEI_004",
+            "name":"张辽",
+            "camp":0,
+            "isMan":1,
+            "HPupperlimit":4,
+            "skills" : [
+                {
+                    "name":"突袭"
+                }
+            ]
+        }
+    ]
+}

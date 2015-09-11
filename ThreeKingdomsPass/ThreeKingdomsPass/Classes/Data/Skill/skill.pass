@@ -1,0 +1,46 @@
+{
+    "skill" : [
+        {
+            "name":"奸雄",
+            "depict":"每当你受到伤害后,你可以获得处理区里对你造成此伤害的牌｡",
+            "skilltype":0,
+            "soundone":"jianxiong_soundone",
+            "soundtwo":"jianxiong_soundtwo"
+        },
+        {
+            "name":"护驾",
+            "depict":"主公技，每当你需要使用或打出【闪】时，你可以令其他魏势力角色选择是否打出一张【闪】（视为由你使用或打出）。",
+            "skilltype":1,
+            "soundone":"hujia_soundone",
+            "soundtwo":"hujia_soundtwo"
+        },
+        {
+            "name":"反馈",
+            "depict":"每当你受到伤害后，你可以获得来源的一张牌。",
+            "skilltype":0,
+            "soundone":"fankui_soundone",
+            "soundtwo":"fankui_soundtwo"
+        },
+        {
+            "name":"鬼才",
+            "depict":"每当一名角色的判定牌生效前，你可以打出一张手牌代替之。",
+            "skilltype":0,
+            "soundone":"guicai_soundone",
+            "soundtwo":"guicai_soundtwo"
+        },
+        {
+            "name":"刚烈",
+            "depict":"每当你受到伤害后,你可以获得处理区里对你造成此伤害的牌｡",
+            "skilltype":0,
+            "soundone":"ganglie_soundone",
+            "soundtwo":"ganglie_soundtwo"
+        },
+        {
+            "name":"突袭",
+            "depict":"每当你受到伤害后,你可以获得处理区里对你造成此伤害的牌｡",
+            "skilltype":0,
+            "soundone":"tuxi_soundone",
+            "soundtwo":"tuxi_soundtwo"
+        }
+    ]
+}

@@ -13,8 +13,8 @@
 
 @interface TKGameUserHandCardsScrollView () <TKGameCardViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) NSMutableArray *views;
+@property (nonatomic, strong) TKRoleData *role;
 
 @end
 
@@ -32,39 +32,43 @@
     return self;
 }
 
-- (void)updateItemsWithCards:(NSArray *)cards
+- (void)setUpRole:(TKRoleData *)role
 {
-    self.cards = [cards mutableCopy];
-    
+    self.role = role;
+}
+
+- (void)updateItemsWithCards
+{
     for (TKGameCardView *cardView in self.subviews) {
         if ([cardView isKindOfClass:[TKGameCardView class]]) {
             [cardView removeFromSuperview];
         }
     }
     
-    [self.cards enumerateObjectsUsingBlock:^(TKGameCardData *data, NSUInteger idx, BOOL *stop) {
-        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT) WithCardData:data];
+    [self.role.handcards enumerateObjectsUsingBlock:^(TKGameCardData *data, NSUInteger idx, BOOL *stop) {
+        TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:CGRectMake(1.f+idx*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT)];
+        [cardView setCardData:data];
         cardView.delegate = self;
         cardView.tag = idx+100;
         [self addSubview:cardView];
         [self.views addObject:cardView];
         
     }];
-    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+    self.contentSize = CGSizeMake(1.f+[self.role.handcards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
 }
 
 - (void)addSingleCardData:(TKGameCardData *)data
 {
-    CGRect start = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f)+TK_CARD_USERHAND_WIDTH/2, 1.f-TK_CARD_USERHAND_HEIGHT/2, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
-    CGRect end = CGRectMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect start = CGRectMake(1.f+[self.role.handcards count]*(TK_CARD_USERHAND_WIDTH+1.f)+TK_CARD_USERHAND_WIDTH/2, 1.f-TK_CARD_USERHAND_HEIGHT/2, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
+    CGRect end = CGRectMake(1.f+[self.role.handcards count]*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     
-    TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:start WithCardData:data];
+    TKGameCardView *cardView = [[TKGameCardView alloc] initWithFrame:start];
+    [cardView setCardData:data];
     cardView.transform = CGAffineTransformMakeRotation(M_PI_2/2);
     cardView.delegate = self;
-    cardView.tag = [self.cards count]+100;
+    cardView.tag = [self.role.handcards count]+100;
     [self addSubview:cardView];
     
-    [self.cards addObject:data];
     [self.views addObject:cardView];
     
     [self _updateContentSize];
@@ -73,7 +77,7 @@
         cardView.transform = CGAffineTransformMakeRotation(0);
         cardView.frame = end;
     } completion:^(BOOL finished) {
-        
+        [self.role getCardFromPlayCardsWithCount:1];
     }];
 }
 
@@ -135,9 +139,9 @@
     }
     
     NSMutableArray *views = self.views;
-    NSMutableArray *cards = self.cards;
+    NSMutableArray *cards = self.role.handcards;
     
-    NSObject *objTemp = [self.cards objectAtIndex:(view.tag-100)];
+    NSObject *objTemp = [self.role.handcards objectAtIndex:(view.tag-100)];
     [views removeObjectAtIndex:(view.tag-100)];
     [cards removeObjectAtIndex:(view.tag-100)];
     if (insertIndex >= views.count) {
@@ -158,7 +162,7 @@
 
 - (void)_layoutExceptIndex:(NSInteger)exceptIndex
 {
-    NSInteger n = [self.cards count];
+    NSInteger n = [self.role.handcards count];
     for(NSInteger i = 0; i < n; i++){
         TKGameCardView *cardView = (TKGameCardView *)self.views[i];
         cardView.tag = i+100;
@@ -181,7 +185,7 @@
 
 - (void)_layoutDropIndex:(NSInteger)dropIndex
 {
-    NSInteger n = [self.cards count];
+    NSInteger n = [self.role.handcards count];
     for(NSInteger i = dropIndex; i < n; i++){
         TKGameCardView *cardView = (TKGameCardView *)self.views[i];
         cardView.tag = i+100;
@@ -205,12 +209,14 @@
 - (void)dragCardViewEnd:(TKGameCardView *)view
 {
     if (self.isDropStatus) {
+        //弃牌
         if (fabs(CGRectGetMinY(view.frame)) >= TK_SCREEN_HEIGHT/4.f) {
             [self.views removeObjectAtIndex:(view.tag-100)];
-            [self.cards removeObjectAtIndex:(view.tag-100)];
+            [self.role.handcards removeObjectAtIndex:(view.tag-100)];
             [self _layoutDropIndex:(view.tag-100)];
             [view removeFromSuperview];
             [self _updateContentSize];
+            [self.role dropCard:[[TKGloble sharedInstance] cardWithCardID:view.data.cardID]];
             return;
         }
     }
@@ -226,9 +232,9 @@
 
 - (void)_updateContentSize
 {
-    self.contentSize = CGSizeMake(1.f+[self.cards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
-    NSUInteger page = [self.cards count]/12;
-    if (([self.cards count])%12 == 0) page--;
+    self.contentSize = CGSizeMake(1.f+[self.role.handcards count]*(TK_CARD_USERHAND_WIDTH+1.f), 0);
+    NSUInteger page = [self.role.handcards count]/12;
+    if (([self.role.handcards count])%12 == 0) page--;
     CGFloat x = (12*(TK_CARD_USERHAND_WIDTH+1.f))*page;
     [self setContentOffset:CGPointMake(x, 0) animated:NO];
 }

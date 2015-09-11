@@ -21,6 +21,12 @@
 		1C6F2DB01B9EBE2700BED00F /* game_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6F2DAF1B9EBE2700BED00F /* game_background.jpg */; };
 		1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */; };
 		1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */; };
+		1C9DB4A41BA2A46700FB1276 /* role.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB4A31BA2A46700FB1276 /* role.pass */; };
+		1C9DB4A71BA2A53700FB1276 /* TKRoleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DB4A61BA2A53700FB1276 /* TKRoleData.m */; };
+		1C9DB4AA1BA2A5CE00FB1276 /* TKRoleEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DB4A91BA2A5CE00FB1276 /* TKRoleEquipment.m */; };
+		1C9DB4AD1BA2A68E00FB1276 /* skill.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DB4AC1BA2A68E00FB1276 /* skill.pass */; };
+		1C9DB4B01BA2A70600FB1276 /* TKSkillData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DB4AF1BA2A70600FB1276 /* TKSkillData.m */; };
+		1C9DB4B31BA2B5FF00FB1276 /* TKRoleData+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DB4B21BA2B5FF00FB1276 /* TKRoleData+Event.m */; };
 		1CE686281B95B28000C73E81 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE686271B95B28000C73E81 /* background.jpg */; };
 		1CEF645F1BA01EFB0014C550 /* card.pass in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF645C1BA01EFB0014C550 /* card.pass */; };
 		1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF645E1BA01EFB0014C550 /* TKGameCardData.m */; };
@@ -124,6 +130,16 @@
 		1C6F4AEF1B9FF59300BED00F /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		1C6F4AF01B9FF59300BED00F /* TransitionHorizontalLinesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionHorizontalLinesAnimator.h; sourceTree = "<group>"; };
 		1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionHorizontalLinesAnimator.m; sourceTree = "<group>"; };
+		1C9DB4A31BA2A46700FB1276 /* role.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = role.pass; sourceTree = "<group>"; };
+		1C9DB4A51BA2A53700FB1276 /* TKRoleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRoleData.h; sourceTree = "<group>"; };
+		1C9DB4A61BA2A53700FB1276 /* TKRoleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRoleData.m; sourceTree = "<group>"; };
+		1C9DB4A81BA2A5CE00FB1276 /* TKRoleEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRoleEquipment.h; sourceTree = "<group>"; };
+		1C9DB4A91BA2A5CE00FB1276 /* TKRoleEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRoleEquipment.m; sourceTree = "<group>"; };
+		1C9DB4AC1BA2A68E00FB1276 /* skill.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skill.pass; sourceTree = "<group>"; };
+		1C9DB4AE1BA2A70600FB1276 /* TKSkillData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSkillData.h; sourceTree = "<group>"; };
+		1C9DB4AF1BA2A70600FB1276 /* TKSkillData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSkillData.m; sourceTree = "<group>"; };
+		1C9DB4B11BA2B5FF00FB1276 /* TKRoleData+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKRoleData+Event.h"; sourceTree = "<group>"; };
+		1C9DB4B21BA2B5FF00FB1276 /* TKRoleData+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKRoleData+Event.m"; sourceTree = "<group>"; };
 		1CE686271B95B28000C73E81 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1CEF645C1BA01EFB0014C550 /* card.pass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = card.pass; sourceTree = "<group>"; };
 		1CEF645D1BA01EFB0014C550 /* TKGameCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameCardData.h; sourceTree = "<group>"; };
@@ -326,6 +342,30 @@
 				1C6F4AF11B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		1C9DB4A21BA2A20700FB1276 /* Role */ = {
+			isa = PBXGroup;
+			children = (
+				1C9DB4A31BA2A46700FB1276 /* role.pass */,
+				1C9DB4A51BA2A53700FB1276 /* TKRoleData.h */,
+				1C9DB4A61BA2A53700FB1276 /* TKRoleData.m */,
+				1C9DB4A81BA2A5CE00FB1276 /* TKRoleEquipment.h */,
+				1C9DB4A91BA2A5CE00FB1276 /* TKRoleEquipment.m */,
+				1C9DB4B11BA2B5FF00FB1276 /* TKRoleData+Event.h */,
+				1C9DB4B21BA2B5FF00FB1276 /* TKRoleData+Event.m */,
+			);
+			path = Role;
+			sourceTree = "<group>";
+		};
+		1C9DB4AB1BA2A66400FB1276 /* Skill */ = {
+			isa = PBXGroup;
+			children = (
+				1C9DB4AC1BA2A68E00FB1276 /* skill.pass */,
+				1C9DB4AE1BA2A70600FB1276 /* TKSkillData.h */,
+				1C9DB4AF1BA2A70600FB1276 /* TKSkillData.m */,
+			);
+			path = Skill;
 			sourceTree = "<group>";
 		};
 		1CE686261B95B28000C73E81 /* Images */ = {
@@ -551,6 +591,8 @@
 		1CF537FB1B93FF5600FBA3F3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1C9DB4AB1BA2A66400FB1276 /* Skill */,
+				1C9DB4A21BA2A20700FB1276 /* Role */,
 				1CEF645A1BA01EFB0014C550 /* Game */,
 				1CF537FC1B93FF5600FBA3F3 /* Globle */,
 			);
@@ -671,6 +713,7 @@
 				1CEF64AE1BA032450014C550 /* card_guohechaiqiao_image.jpg in Resources */,
 				1CEF64B21BA032450014C550 /* card_lebusishu_image.jpg in Resources */,
 				1CEF64A21BA032450014C550 /* card_jueying_image.jpg in Resources */,
+				1C9DB4AD1BA2A68E00FB1276 /* skill.pass in Resources */,
 				1CEF64A11BA032450014C550 /* card_hanbingjian_image.jpg in Resources */,
 				1CEF64A61BA032450014C550 /* card_renwangdun_image.jpg in Resources */,
 				1C15D1B71B9189EB000A2615 /* Main.storyboard in Resources */,
@@ -695,6 +738,7 @@
 				1CEF64AA1BA032450014C550 /* card_zhugeliannu_image.jpg in Resources */,
 				1CF538171B93FF5600FBA3F3 /* HiraMinProN-W6.ttf in Resources */,
 				1CEF64971BA032450014C550 /* card_tao_image.jpg in Resources */,
+				1C9DB4A41BA2A46700FB1276 /* role.pass in Resources */,
 				1CEF64A41BA032450014C550 /* card_qinggangjian_image.jpg in Resources */,
 				1CEF649E1BA032450014C550 /* card_fangtianhuaji_image.jpg in Resources */,
 				1CEF64B31BA032450014C550 /* card_nanmanruqin_image.jpg in Resources */,
@@ -725,11 +769,13 @@
 				1CF538071B93FF5600FBA3F3 /* NSMapTable+BlocksKit.m in Sources */,
 				1CF538111B93FF5600FBA3F3 /* NSSet+BlocksKit.m in Sources */,
 				1CF538091B93FF5600FBA3F3 /* NSMutableDictionary+BlocksKit.m in Sources */,
+				1C9DB4B31BA2B5FF00FB1276 /* TKRoleData+Event.m in Sources */,
 				1C15D1B41B9189EB000A2615 /* ViewController.m in Sources */,
 				1C6F4AF31B9FF59300BED00F /* TransitionHorizontalLinesAnimator.m in Sources */,
 				1CF538151B93FF5600FBA3F3 /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				1CF538021B93FF5600FBA3F3 /* TKHomePageViewController.m in Sources */,
 				1CF5380D1B93FF5600FBA3F3 /* NSObject+BKAssociatedObjects.m in Sources */,
+				1C9DB4B01BA2A70600FB1276 /* TKSkillData.m in Sources */,
 				1CF538031B93FF5600FBA3F3 /* NSArray+BlocksKit.m in Sources */,
 				1CF538161B93FF5600FBA3F3 /* UIView+BlocksKit.m in Sources */,
 				1CF538081B93FF5600FBA3F3 /* NSMutableArray+BlocksKit.m in Sources */,
@@ -744,12 +790,14 @@
 				1CF538101B93FF5600FBA3F3 /* NSOrderedSet+BlocksKit.m in Sources */,
 				1C15D1B11B9189EB000A2615 /* AppDelegate.m in Sources */,
 				1CF555641B9597F800FBA3F3 /* FBShimmeringLayer.m in Sources */,
+				1C9DB4A71BA2A53700FB1276 /* TKRoleData.m in Sources */,
 				1CF538191B93FF5600FBA3F3 /* TKGloble.m in Sources */,
 				1CF5380E1B93FF5600FBA3F3 /* NSObject+BKBlockExecution.m in Sources */,
 				1CF538051B93FF5600FBA3F3 /* NSIndexSet+BlocksKit.m in Sources */,
 				1CEF64601BA01EFB0014C550 /* TKGameCardData.m in Sources */,
 				1CF5380C1B93FF5600FBA3F3 /* NSMutableSet+BlocksKit.m in Sources */,
 				1CF538061B93FF5600FBA3F3 /* NSInvocation+BlocksKit.m in Sources */,
+				1C9DB4AA1BA2A5CE00FB1276 /* TKRoleEquipment.m in Sources */,
 				1C6F4AF21B9FF59300BED00F /* TransitionAnimator.m in Sources */,
 				1CEF64631BA0200A0014C550 /* TKGame.m in Sources */,
 				1CF5380F1B93FF5600FBA3F3 /* NSObject+BKBlockObservation.m in Sources */,
