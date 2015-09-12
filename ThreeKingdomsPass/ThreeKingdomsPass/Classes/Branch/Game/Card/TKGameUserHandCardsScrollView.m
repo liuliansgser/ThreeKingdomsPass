@@ -208,19 +208,29 @@
 
 - (void)dragCardViewEnd:(TKGameCardView *)view
 {
-    if (self.isDropStatus) {
+    if (self.isDropStatus && fabs(CGRectGetMinY(view.frame)) >= TK_SCREEN_HEIGHT/4.f) {
         //弃牌
-        if (fabs(CGRectGetMinY(view.frame)) >= TK_SCREEN_HEIGHT/4.f) {
+        [UIView animateWithDuration:0.25 animations:^{
+            CGPoint center = view.center;
+            [view setFrame:CGRectZero];
+            view.center = center;
+            return;
+        } completion:^(BOOL finished) {
             [self.views removeObjectAtIndex:(view.tag-100)];
             [self.role.handcards removeObjectAtIndex:(view.tag-100)];
             [self _layoutDropIndex:(view.tag-100)];
             [view removeFromSuperview];
-            [self _updateContentSize];
+            if (self.contentOffset.x != 0) [self _updateContentSize];
             [self.role dropCard:[[TKGloble sharedInstance] cardWithCardID:view.data.cardID]];
-            return;
-        }
+        }];
     }
-    
+    else {
+        [self _unDropView:view];
+    }
+}
+
+- (void)_unDropView:(TKGameCardView *)view
+{
     NSUInteger index = view.tag;
     CGRect rect = CGRectMake(1.f+(index-100)*(TK_CARD_USERHAND_WIDTH+1.f), 1.f, TK_CARD_USERHAND_WIDTH, TK_CARD_USERHAND_HEIGHT);
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{

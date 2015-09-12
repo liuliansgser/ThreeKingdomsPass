@@ -15,16 +15,13 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, unsafe_unretained) CGPoint startOffset;
 
-@property (nonatomic, unsafe_unretained) NSTimeInterval lastMoveTime;// 上次移动的时间
-@property (nonatomic, strong) NSTimer *moveTimer; // 计时开始调整位置
-
 @end
 
 @implementation TKGameCardView
 
 - (void)dealloc {
+    _tapGesture = nil;
     _panGesture = nil;
-    _moveTimer = nil;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -73,12 +70,12 @@
     switch (sender.state) {
         case UIGestureRecognizerStateBegan: {
             [UIView animateWithDuration:0.25 animations:^{
+                CGPoint beginPosition = [sender locationInView:me.superview];
+                me.startOffset = CGPointMake(me.center.x-beginPosition.x, me.center.y-beginPosition.y);
                 [me.superview bringSubviewToFront:me];
                 me.transform = CGAffineTransformMakeScale(1.1, 1.1);
             } completion:^(BOOL finished) {
-                me.lastMoveTime = [NSDate timeIntervalSinceReferenceDate];
-                CGPoint beginPosition = [sender locationInView:me.superview];
-                me.startOffset = CGPointMake(me.center.x-beginPosition.x, me.center.y-beginPosition.y);
+                ;
             }];
         }
             break;
@@ -86,11 +83,12 @@
             CGPoint currentPosition = [sender locationInView:me.superview];
             
             if (fabs((currentPosition.x+me.startOffset.x) - me.center.x) > TK_CARD_MOVETIME_MIN || fabs((currentPosition.y+me.startOffset.y) - me.center.y) > TK_CARD_MOVETIME_MIN) {
-                [self _timerAction:_moveTimer];
+                if(self.delegate && [self.delegate respondsToSelector:@selector(dragCardViewChange:)]){
+                    [self.delegate dragCardViewChange:self];
+                }
             }
             
             me.center = CGPointMake(currentPosition.x+me.startOffset.x, currentPosition.y+me.startOffset.y);
-            me.lastMoveTime = [NSDate timeIntervalSinceReferenceDate];
         }
             break;
         case UIGestureRecognizerStateEnded:
@@ -110,16 +108,6 @@
             
         default:
             break;
-    }
-}
-
-- (void)_timerAction:(NSTimer *)timer {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(dragCardViewChange:)]){
-        [self.delegate dragCardViewChange:self];
-    }
-    if ([_moveTimer isValid]) {
-        [_moveTimer invalidate];
-        self.moveTimer = nil;
     }
 }
 
